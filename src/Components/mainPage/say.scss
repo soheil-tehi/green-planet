@@ -2,9 +2,18 @@
 
 .say-container {
     @include my-flex(column);
+    padding: 0 20px;
 
-    p{
+    h2 {
+        font-size: 32px;
+    }
+
+    p {
         margin: 30px 0;
         text-align: center;
+        line-height: 2;
+        font-weight: 600;
+        font-size: 20px;
+        color: $second-color;
     }
 }

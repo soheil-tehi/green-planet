@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+import Customers from '../../Components/mainPage/customers'
 import Guidance from '../../Components/mainPage/guidance'
 import Header from '../../Components/mainPage/header'
 import ProductsMain from '../../Components/mainPage/productsMain'
@@ -6,14 +8,26 @@ import Say from '../../Components/mainPage/say'
 import Service from '../../Components/mainPage/service'
 
 function MianPage() {
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        function handleResize() {
+            setIsMobile(window.innerWidth < 600);
+        }
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
         <>
-            <Header />
+            {/* <Header />  */}
             <Purposes />
             <Service />
             <Guidance />
-            <ProductsMain/>
-            <Say/>
+            <ProductsMain />
+            <Say />
+            {!isMobile && <Customers />}
         </>
     )
 }

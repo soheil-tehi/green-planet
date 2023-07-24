@@ -1,7 +1,7 @@
 @import '../../Sass/-variables.scss';
 
 
-.guidance-container{
+.guidance-container {
     background: linear-gradient(rgba(54, 54, 54, 0.6), $second-color), url("../../assets/Images/cta-bg.jpg") no-repeat center;
     background-size: cover;
     background-attachment: fixed;
@@ -9,5 +9,20 @@
     height: 50vh;
     @include my-flex(column);
     gap: 30px;
+    padding: 0 20px;
 
+    h2 {
+        font-size: 32px;
+    }
+
+    .guidance-btn {
+        @include my-button;
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .guidance-btn {
+        width: 100% !important;
+    }
 }

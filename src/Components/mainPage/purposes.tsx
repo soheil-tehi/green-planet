@@ -1,4 +1,8 @@
 import { AiFillHeart } from 'react-icons/ai';
+import { TbFileInfo } from 'react-icons/tb';
+import { MdAir } from 'react-icons/md';
+import { RiMentalHealthFill } from 'react-icons/ri';
+import { GiStrong } from 'react-icons/gi';
 import './purposes.scss';
 
 function Purposes() {
@@ -19,7 +23,10 @@ function Purposes() {
                         کردیم نگهداری گل مزایای فراوانی بر سلامت جسم و روان افراد
                         نیز دارد.
                     </p>
-                    <a className='right-btn' href="#">درباره ما</a>
+                    <div className='right-btn'>
+                        <TbFileInfo />
+                        <a href="#">درباره ما</a>
+                    </div>
                 </div>
             </div>
             <div className='purpose-left'>
@@ -28,7 +35,7 @@ function Purposes() {
 
                         <div className='purpose-info'>
 
-                            <AiFillHeart />
+                            <MdAir />
                             <h4>تصفیه هوا و آزاد شدن اکسیژن</h4>
                             <p>
                                 با قرار دادن گل در نقاط مختلف منزل می توان این آلودگی را
@@ -36,6 +43,21 @@ function Purposes() {
                                 می گیرند و اکسیژن آزاد می کنند.
                             </p>
                         </div>
+
+                        <div className='purpose-info'>
+
+                            <RiMentalHealthFill />
+                            <h4> کاهش استرس</h4>
+                            <p>
+                                نگهداری گل استرس در منزل و محل کار را کاهش می دهد؛
+                                گیاهان روح و روان انسان ها را تسکین می دهند و به عنوان
+                                راهی برای از بین بردن استرس معرفی می شوند.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div className='purpose-info-bottom'>
+
                         <div className='purpose-info'>
 
                             <AiFillHeart />
@@ -48,23 +70,10 @@ function Purposes() {
                             </p>
 
                         </div>
-                    </div>
-                    <div className='purpose-info-bottom'>
-
 
                         <div className='purpose-info'>
 
-                            <AiFillHeart />
-                            <h4> کاهش استرس</h4>
-                            <p>
-                                نگهداری گل استرس در منزل و محل کار را کاهش می دهد؛
-                                گیاهان روح و روان انسان ها را تسکین می دهند و به عنوان
-                                راهی برای از بین بردن استرس معرفی می شوند.
-                            </p>
-                        </div>
-                        <div className='purpose-info'>
-
-                            <AiFillHeart />
+                            <GiStrong />
                             <h4>کاهش سرماخوردگی، گلودرد و سرفه‌های خشک</h4>
                             <p>
                                 براساس مطالعه‌ای که در دانشگاه کشاورزی نروژ انجام شد
@@ -82,4 +91,4 @@ function Purposes() {
     )
 }
 
-export default Purposes
+export default Purposes;

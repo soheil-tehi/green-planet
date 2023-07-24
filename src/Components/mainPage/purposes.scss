@@ -2,75 +2,195 @@
 
 .purpose-container {
     display: flex;
-    width: 100%;
-    height: 100vh;
-    background-color: $second-color;
+    width: 90%;
+    margin: 80px auto;
+    padding: 20px 0;
+    gap: 40px;
+
     .purpose-right {
-        padding: 0 20px;
+        // padding: 0 20px;
         flex: 40%;
         padding: 20px auto;
 
 
         .right-wrapper {
-            margin-top: calc(60vh / 2);
+            margin-top: calc(40vh / 2);
 
 
             h3 {
-                font-size: 50px;
+                font-size: 34px;
             }
 
             p {
-                font-size: 20px;
-                margin: 10px;
+                font-size: 18px;
+                line-height: 30px;
+                margin: 25px 0;
+
+
             }
 
             .right-btn {
+
                 @include my-button;
+
             }
+
         }
     }
 
     .purpose-left {
-        padding: 0 20px;
+        // padding: 0 20px;
         flex: 60%;
 
 
 
         .left-wrapper {
-            margin-top: calc(60vh / 2);
+            margin-top: calc(40vh / 2);
             display: flex;
             flex-direction: column;
+
             gap: 20px;
-        }
 
-        .purpose-info-top {
-            flex: 1;
-            @include my-flex;
-            gap: 20px;
-            margin-bottom: 40px;
+            .purpose-info-top {
+                flex: 1;
+                // @include my-flex;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                // margin-bottom: 40px;
 
-        }
-
-        .purpose-info {
-            flex: 1;
-
-            svg {
-                font-size: 40px;
-                color: $primary-color;
             }
 
-            h4 {
-                font-size: 25px;
+            .purpose-info {
+                // border: 1px dashed #ccc;
+                padding: 10px;
+                flex: 1;
+
+                svg {
+                    font-size: 40px !important;
+                    color: $primary-color;
+                }
+
+                h4 {
+                    font-size: 25px;
+                    margin: 10px auto;
+                }
+
+
+                p {
+                    line-height: 25px;
+                }
+
+
             }
+
+            .purpose-info-bottom {
+                flex: 1;
+                gap: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: start;
+
+            }
+
         }
 
-        .purpose-info-bottom {
-            flex: 1;
-            gap: 20px;
-            @include my-flex;
+    }
+}
 
+
+@media screen and (max-width:600px) {
+    .purpose-container {
+        flex-direction: column;
+
+    }
+
+    .purpose-info-top {
+        flex-direction: column;
+
+    }
+
+    .purpose-info-bottom {
+        flex-direction: column;
+
+    }
+
+    .purpose-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        @include my-border;
+        width: 100%;
+
+
+        p {
+            display: none;
         }
+    }
+
+    .right-btn {
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .purpose-container {
+        flex-direction: column;
+
+    }
+
+    .purpose-info-top {
+        flex-direction: column;
+
+    }
+
+    .purpose-info-bottom {
+        flex-direction: column;
+
+    }
+
+    .purpose-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        @include my-border;
+        width: 100%;
 
 
+        p {
+            display: block;
+        }
+    }
+}
+
+@media screen and (min-width:992px) {
+    .purpose-container {
+        flex-direction: row;
+
+    }
+
+    .purpose-info-top {
+        flex-direction: row;
+
+    }
+
+    .purpose-info-bottom {
+        flex-direction: row;
+
+    }
+
+    .purpose-info {
+        display: block;
+        gap: 20px;
+        box-shadow: none;
+        width: 100%;
+
+        p {
+            display: block;
+        }
     }
 }

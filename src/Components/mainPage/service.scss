@@ -1,11 +1,13 @@
 @import '../../Sass/-variables.scss';
 
 .service-container {
-    background-color: $second-color;
+    // background-color: $second-color;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 50px 20px;
+    width: 90%;
+    margin: 20px auto;
+    // padding: 50px 20px;
+    overflow: hidden;
 
     h2 {
         text-align: center;
@@ -20,6 +22,7 @@
 
 .service-box-wrapper {
     display: flex;
+    padding:  20px;
     gap: 20px;
 
 
@@ -32,7 +35,7 @@
         gap: 30px;
 
 
-        h4{
+        h4 {
             font-size: 18px;
         }
 
@@ -44,4 +47,31 @@
 
     }
 
+}
+
+@media screen and (max-width:600px) {
+    .service-box-wrapper{
+        flex-direction: column;
+
+        .service-box{
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            p{
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:600px) {
+    .service-box-wrapper{
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .service-box-wrapper{
+        flex-direction: row;
+    }
 }

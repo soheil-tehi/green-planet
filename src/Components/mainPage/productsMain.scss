@@ -2,10 +2,12 @@
 
 .productsMain-container {
     @include my-flex(column);
-    padding: 30px;
+    width: 90%;
+    margin: 40px auto;
+    // padding: 30px;
 
     h2 {
-        font-size: 50px;
+        font-size: 32px;
         margin-bottom: 30px;
     }
 
@@ -16,14 +18,22 @@
 
     .productMain-wrapper {
         display: flex;
+        gap: 20px;
 
         .productsMain-box {
+            // border: 1px solid red;
+            @include my-border;
             flex: 1;
-            gap: 20px;
 
             img {
                 width: 100%;
             }
         }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .productMain-wrapper {
+        flex-direction: column;
     }
 }

@@ -1,23 +1,57 @@
-$primary-color: #224229;
-$second-color: #018342;
+$primary-color: #67d18d;
+$second-color: #026131;
 $btn-color: #ff6900;
 
 // Mixins
-@mixin my-button(){
-    padding: 10px 15px;
+@mixin my-button() {
+    padding: 10px 20px;
     font-size: 1em;
-    font-weight: bold;
-    background-color: $btn-color;
+    font-weight: 500;
+    background-color: $primary-color;
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    border: 1px solid transparent;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    svg {
+        color: white;
+        font-size: 25px;
+    }
+
+    &:hover {
+        background-color: #fff;
+        border: 1px solid $primary-color;
+
+        a,
+        svg {
+
+            color: $primary-color;
+        }
+    }
+
+
 }
 
-@mixin my-flex($dir:row){
+@mixin my-flex($dir: row) {
     display: flex;
     flex-direction: $dir;
     justify-content: center;
     align-items: center;
 }
 
-@mixin my-border($borderR:5px){
-    box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.1);
+@mixin my-border($borderR: 5px) {
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.1);
     border-radius: $borderR;
 }

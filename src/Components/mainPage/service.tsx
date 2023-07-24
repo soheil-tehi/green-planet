@@ -1,5 +1,8 @@
 import React from 'react'
-import { BsFillEmojiHeartEyesFill } from 'react-icons/bs';
+import { BiRun } from 'react-icons/bi';
+import { FaTree } from 'react-icons/fa';
+import { BsCashCoin } from 'react-icons/bs';
+import { SiAdguard } from 'react-icons/si';
 import './service.scss';
 
 function Service() {
@@ -16,7 +19,7 @@ function Service() {
             </p>
             <div className='service-box-wrapper'>
                 <div className='service-box'>
-                    <BsFillEmojiHeartEyesFill />
+                    <BiRun />
                     <h4>ارسال سریع و مطمئن</h4>
                     <p >
                         روز و ساعت دقیق تحویل سفارشات؛ بلافاصله پس از آماده شدن
@@ -24,7 +27,7 @@ function Service() {
                     </p>
                 </div>
                 <div className='service-box'>
-                    <BsFillEmojiHeartEyesFill />
+                    <FaTree />
                     <h4>خدمات باغبانی و گیاهان آپارتمانی</h4>
                     <p >
                         خبر خوب این است که گلستان بعد از اتمام فرآیند خرید، شما را
@@ -33,7 +36,7 @@ function Service() {
                     </p>
                 </div>
                 <div className='service-box'>
-                    <BsFillEmojiHeartEyesFill />
+                    <BsCashCoin />
                     <h4>پرداخت در محل</h4>
                     <p >
                         پرداخت به سفیر گلستان در محل، به صورت نقدی و یا از طریق
@@ -41,7 +44,7 @@ function Service() {
                     </p>
                 </div>
                 <div className='service-box'>
-                    <BsFillEmojiHeartEyesFill />
+                    <SiAdguard />
                     <h4>ضمانت اصالت و سلامت کالا</h4>
                     <p>
                         تمامی محصولات گلستان همراه با پلاکِ مخصوصِ برندِ ما عرضه
