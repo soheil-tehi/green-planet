@@ -1,0 +1,76 @@
+@import "../../Sass/-variables.scss";
+
+.purpose-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: $second-color;
+    .purpose-right {
+        padding: 0 20px;
+        flex: 40%;
+        padding: 20px auto;
+
+
+        .right-wrapper {
+            margin-top: calc(60vh / 2);
+
+
+            h3 {
+                font-size: 50px;
+            }
+
+            p {
+                font-size: 20px;
+                margin: 10px;
+            }
+
+            .right-btn {
+                @include my-button;
+            }
+        }
+    }
+
+    .purpose-left {
+        padding: 0 20px;
+        flex: 60%;
+
+
+
+        .left-wrapper {
+            margin-top: calc(60vh / 2);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .purpose-info-top {
+            flex: 1;
+            @include my-flex;
+            gap: 20px;
+            margin-bottom: 40px;
+
+        }
+
+        .purpose-info {
+            flex: 1;
+
+            svg {
+                font-size: 40px;
+                color: $primary-color;
+            }
+
+            h4 {
+                font-size: 25px;
+            }
+        }
+
+        .purpose-info-bottom {
+            flex: 1;
+            gap: 20px;
+            @include my-flex;
+
+        }
+
+
+    }
+}

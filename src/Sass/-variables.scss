@@ -1,0 +1,23 @@
+$primary-color: #224229;
+$second-color: #018342;
+$btn-color: #ff6900;
+
+// Mixins
+@mixin my-button(){
+    padding: 10px 15px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: $btn-color;
+}
+
+@mixin my-flex($dir:row){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin my-border($borderR:5px){
+    box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.1);
+    border-radius: $borderR;
+}

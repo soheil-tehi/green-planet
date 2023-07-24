@@ -1,10 +1,11 @@
 import './App.scss';
+import MianPage from './Pages/mianPage/mianPage';
 
 function App() {
 
   return (
     <>
-      <h1>Green Planet</h1>
+      <MianPage />
     </>
   )
 }

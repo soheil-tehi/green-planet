@@ -1,0 +1,47 @@
+@import '../../Sass/-variables.scss';
+
+.service-container {
+    background-color: $second-color;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 50px 20px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 32px;
+    }
+
+    p {
+        margin-bottom: 30px;
+    }
+}
+
+.service-box-wrapper {
+    display: flex;
+    gap: 20px;
+
+
+    .service-box {
+        flex: 1;
+        padding: 20px;
+        @include my-border();
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+
+        h4{
+            font-size: 18px;
+        }
+
+
+        svg {
+            color: $primary-color;
+            font-size: 40px;
+        }
+
+    }
+
+}

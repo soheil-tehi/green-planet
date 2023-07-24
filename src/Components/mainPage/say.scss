@@ -1,0 +1,10 @@
+@import '../../Sass/-variables.scss';
+
+.say-container {
+    @include my-flex(column);
+
+    p{
+        margin: 30px 0;
+        text-align: center;
+    }
+}

@@ -1,0 +1,29 @@
+@import '../../Sass/-variables.scss';
+
+.productsMain-container {
+    @include my-flex(column);
+    padding: 30px;
+
+    h2 {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        margin-bottom: 30px;
+    }
+
+
+    .productMain-wrapper {
+        display: flex;
+
+        .productsMain-box {
+            flex: 1;
+            gap: 20px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

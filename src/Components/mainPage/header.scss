@@ -1,0 +1,47 @@
+@import '../../Sass/-variables.scss';
+
+.header-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient($primary-color, $second-color);
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+
+    .header-info {
+        margin: 0 auto;
+
+        h1 {
+            font-size: 65px;
+        }
+    }
+}
+
+.left {
+    flex: 1;
+    position: relative;
+
+
+    .header-img {
+        width: 400px;
+        height: 400px;
+        background-image: url("../../assets/Images/floral.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        z-index: 2;
+        top: 150px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+}
