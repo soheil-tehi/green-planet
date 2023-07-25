@@ -1,11 +1,16 @@
+import routers from './Routers';
+import { useRoutes } from 'react-router-dom';
 import './App.scss';
-import MianPage from './Pages/mianPage/mianPage';
+import Navbar from './Components/Navbar/navbar';
 
 function App() {
 
+  const routes = useRoutes(routers);
+
   return (
     <>
-      <MianPage />
+      <Navbar />
+      {/* {routes} */}
     </>
   )
 }

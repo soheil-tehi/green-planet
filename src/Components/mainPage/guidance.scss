@@ -6,10 +6,10 @@
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    height: 50vh;
     @include my-flex(column);
     gap: 30px;
-    padding: 0 20px;
+    padding: 60px 20px;
+    margin: 40px auto;
 
     h2 {
         font-size: 32px;

@@ -21,7 +21,7 @@ function MianPage() {
 
     return (
         <>
-            {/* <Header />  */}
+            <Header />  
             <Purposes />
             <Service />
             <Guidance />
