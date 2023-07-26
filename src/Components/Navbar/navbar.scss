@@ -2,11 +2,14 @@
 
 .nav-container {
     width: 100%;
-    margin: 10px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    position: fixed;
+    background-color: #fff;
+    top: 0;
+    z-index: 4;
 
     .nav-logo {
         width: 50px;
@@ -44,6 +47,10 @@
         @include my-flex;
         gap: 20px;
 
+        .divider::after {
+            content: "|";
+        }
+
         svg {
             cursor: pointer;
             font-size: 25px;
@@ -58,9 +65,9 @@
     .nav-mini {
 
         display: none;
+
         svg {
             font-size: 24px;
-            // transition: all 1ms;
         }
     }
 }

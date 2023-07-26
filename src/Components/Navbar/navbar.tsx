@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import LogoImg from '../../assets/Images/del.png';
 import { NavLink } from 'react-router-dom';
 import { PiPottedPlantFill } from 'react-icons/pi';
@@ -7,28 +7,20 @@ import { RiContactsBook2Fill } from 'react-icons/ri';
 import { BsInfoSquareFill } from 'react-icons/bs';
 import { AiTwotoneHome, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { BiCartAlt, BiUser } from 'react-icons/bi';
-
-
-
 import './navbar.scss';
 
 function Navbar() {
-
-
-
-
     const [isClose, setIsClose] = useState<boolean>(false);
 
     return (
         <nav className="nav-container" >
             <div className="nav-logo">
-                {/* <h2>name</h2> */}
                 <img src={LogoImg} alt="logo" />
             </div>
             <div className='nav-item' data-flag={isClose}>
                 <NavLink
                     className={({ isActive }) => isActive ? "active nav-link" : "nav-link"}
-                    to="">
+                    to="/">
                     <AiTwotoneHome />
                     <span>خانه</span>
                 </NavLink>
@@ -43,7 +35,7 @@ function Navbar() {
                     <span>مقالات</span>
                 </NavLink>
                 <NavLink className={({ isActive }) => isActive ? "active nav-link" : "nav-link"}
-                    to="">
+                    to="/contact-us">
                     <RiContactsBook2Fill />
                     <span>تماس با ما</span>
                 </NavLink>
@@ -62,7 +54,7 @@ function Navbar() {
             </div>
             <div className='nav-cart' >
                 <BiUser />
-                <span>|</span>
+                <div className='divider'></div>
                 <BiCartAlt />
             </div>
         </nav>

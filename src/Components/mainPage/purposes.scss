@@ -2,10 +2,11 @@
 
 .purpose-container {
     display: flex;
-    width: 90%;
-    margin: 80px auto;
-    padding: 20px 0;
+    width: 100%;
+    padding: 20px;
     gap: 40px;
+    background-image: url("../../assets/Images/about-bg.jpg");
+
 
     .purpose-right {
         // padding: 0 20px;

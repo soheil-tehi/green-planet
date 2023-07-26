@@ -1,7 +1,7 @@
-import routers from './Routers';
+import routers from './Router';
 import { useRoutes } from 'react-router-dom';
-import './App.scss';
 import Navbar from './Components/Navbar/navbar';
+import './App.scss';
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* {routes} */}
+      {routes}
     </>
   )
 }
