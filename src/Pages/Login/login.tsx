@@ -6,11 +6,9 @@ import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import jwtDecode from 'jwt-decode';
 import './login.scss';
 
-
 function Login() {
 
     const [showPass, setShowPass] = useState(false);
-
     const navigate = useNavigate();
 
     const toggleShowPass = () => {
@@ -22,7 +20,6 @@ function Login() {
     };
 
     return (
-
         <div className='login-wrapper'>
             <div className='login-title'>
                 <FiLogIn />
@@ -43,7 +40,6 @@ function Login() {
                         }
                     </a>
                 </div>
-
                 <button className='btn-login'>ورود</button>
                 <button className='btn-register' onClick={() => navigate("/register")}>ثبت نام</button>
                 <div className='google-register'>
@@ -51,11 +47,8 @@ function Login() {
                         <GoogleLogin onSuccess={responseMessage} />
                     </GoogleOAuthProvider>
                 </div>
-
             </form>
         </div>
-
-
     )
 }
 

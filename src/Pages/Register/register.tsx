@@ -69,12 +69,8 @@ function Register() {
                         <GoogleLogin onSuccess={responseMessage} />
                     </GoogleOAuthProvider>
                 </div>
-
-
             </form>
-
         </div>
-
     )
 }
 

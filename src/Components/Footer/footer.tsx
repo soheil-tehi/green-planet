@@ -24,7 +24,7 @@ function Footer() {
                             <p>برای اطلاع از آخرین مقالات و تخفیف ها عضو خبر نامه شوید</p>
                             <div className="footer-newsletter-box">
                                 <button>عضویت</button>
-                                <input type="text" placeholder='لطفا ایمیل را وارد کنید' />
+                                <input type="text" placeholder='ایمیل را وارد کنید' />
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="copyright">
-                    © تمامی حقوق برای سایت گل و گیاه نام گلخانه محفوظ است.
+                  <p>© تمامی حقوق برای سایت گل و گیاه نام گلخانه محفوظ است.</p>
                 </div>
             </div>
         </footer>

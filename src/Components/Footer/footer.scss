@@ -2,8 +2,9 @@
 
 .footer-container {
     width: 100%;
-    margin-top: 200px;
+    margin-top: 150px;
     background-color: $primary-color;
+    overflow: hidden;
 
     .footer-wrapper {
         display: flex;
@@ -31,6 +32,9 @@
             }
 
             .right-item {
+                display: flex;
+                flex-direction: column;
+
                 .right-item-link {
                     text-decoration: none;
                     color: $second-color;
@@ -63,6 +67,8 @@
                     margin-top: 20px;
                     border-radius: 200px;
                     overflow: hidden;
+                    display: flex;
+                    width: 75%;
 
                     input,
                     button {
@@ -72,7 +78,10 @@
                     }
 
                     input {
-                        width: 300px;
+                        width: 100%;
+                        color: rgb(1, 108, 1);
+                        font-size: 15px;
+                        font-weight: 600;
                     }
 
                     button {
@@ -98,13 +107,12 @@
             align-items: center;
             gap: 10px;
             padding: 10px;
+            padding-top: 0;
 
             .foooter-left-wrapper {
                 background-color: #eee;
                 padding: 20px;
-                margin-top: -120px;
-                border-top: 5px solid $primary-color;
-                border-radius: 5px;
+                border-radius: 0 0 5px 5px;
 
                 .footer-social {
                     display: flex;
@@ -130,7 +138,31 @@
         border-top: 1px solid black;
         width: 80%;
         margin: 0 auto;
-        padding: 10px;
         text-align: center;
+
+        p {
+            font-size: 12px;
+        }
+    }
+}
+
+
+@media screen and (max-width:850px) {
+    .footer-wrapper {
+        flex-direction: column;
+
+        .right-item {
+            flex-direction: row !important;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-newsletter-box {
+            width: 100% !important;
+        }
+
+        .foooter-left-wrapper {
+            margin-top: 0 !important;
+        }
     }
 }

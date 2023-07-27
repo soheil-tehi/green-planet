@@ -9,7 +9,6 @@
     border: 1px solid $primary-color;
     @include my-border;
 
-
     .register-title {
         display: flex;
         justify-content: center;
@@ -26,7 +25,6 @@
         display: flex;
         flex-direction: column;
 
-
         label {
             margin: 5px 0;
         }
@@ -35,14 +33,10 @@
             border-radius: 5px;
             border: 1px solid #ccc;
             padding: 5px;
-
             outline: none;
         }
 
-
-
         .register-password {
-            /* padding: 5px; */
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -51,10 +45,9 @@
             justify-content: space-between;
             overflow: hidden;
 
-            a{
+            a {
                 display: flex;
             }
-
 
             input {
                 padding: 5px;
@@ -81,7 +74,6 @@
 
         .btn-login {
             margin: 10px 0;
-
         }
 
         .google-register {
@@ -93,16 +85,12 @@
 
 @media screen and (max-width:1160px) {
     .register-wrapper {
-
         width: 60%;
-
     }
 }
 
 @media screen and (max-width:750px) {
     .register-wrapper {
-
         width: 90%;
-
     }
 }
