@@ -15,7 +15,10 @@ function Navbar() {
     return (
         <nav className="nav-container" >
             <div className="nav-logo">
+                <NavLink to="/">
+
                 <img src={LogoImg} alt="logo" />
+                </NavLink>
             </div>
             <div className='nav-item' data-flag={isClose}>
                 <NavLink
@@ -53,9 +56,14 @@ function Navbar() {
                 }
             </div>
             <div className='nav-cart' >
-                <BiUser />
+                <NavLink to="/login">
+                    <BiUser />
+                </NavLink>
                 <div className='divider'></div>
-                <BiCartAlt />
+                <NavLink to="/cart">
+
+                    <BiCartAlt />
+                </NavLink>
             </div>
         </nav>
     )

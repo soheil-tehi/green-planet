@@ -13,7 +13,6 @@
 
     .nav-logo {
         width: 50px;
-        // @include my-flex;
 
         img {
             width: 100%;
@@ -34,36 +33,39 @@
         .nav-link {
             @include my-flex;
             gap: 5px;
-
         }
     }
 
     .active {
         color: red;
-
     }
 
     .nav-cart {
         @include my-flex;
         gap: 20px;
+  
 
         .divider::after {
             content: "|";
         }
 
-        svg {
-            cursor: pointer;
-            font-size: 25px;
-            transition: all 0.2s;
-
-            &:hover {
-                color: $primary-color;
+        a{
+            color: black;
+            display: flex;
+            
+            svg {
+                cursor: pointer;
+                font-size: 25px;
+                transition: all 0.2s;
+                
+                &:hover {
+                    color: $primary-color;
+                }
             }
         }
     }
 
     .nav-mini {
-
         display: none;
 
         svg {
@@ -78,7 +80,6 @@
         margin-left: auto;
         position: absolute;
         z-index: 3;
-
     }
 
     .nav-logo {
@@ -103,9 +104,6 @@
 
         .nav-item[data-flag="true"] {
             top: 0;
-
         }
-
-
     }
 }
