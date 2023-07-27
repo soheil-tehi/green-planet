@@ -1,0 +1,137 @@
+@import '../../Sass/-variables.scss';
+
+.about-us-container {
+    width: 90%;
+    margin: 100px auto;
+
+    .about-head {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 2.15;
+            font-size: 18px;
+            // font-size: 1.4rem;  
+        }
+    }
+
+    .about-gallery {
+        margin-top: 40px;
+        display: flex;
+
+
+
+        .gallery-right {
+            // background-color: red;
+            flex: 1;
+            padding: 20px;
+
+            ul {
+                list-style: none;
+                /* Remove default bullets */
+            }
+
+            ul li:before {
+                content: "\2022";
+                /* Add bullet point */
+                color: $primary-color;
+                /* Set bullet color */
+                display: inline-block;
+                /* Ensure bullet is on its own line */
+                width: 10px;
+                /* Set width of bullet */
+                // margin-left: 1px; /* Move bullet to left of text */
+            }
+        }
+
+        .image-gallery {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background: rgba(54, 59, 56, 0.7);
+            backdrop-filter: blur(4px);
+            overflow: hidden;
+            z-index: 4;
+
+
+            .image-in-gallery {
+                width: auto;
+                max-width: 90%;
+                max-height: 70%;
+                border-radius: 5px;
+
+            }
+
+            .btn-close-image {
+                position: absolute;
+                cursor: pointer;
+                top: 10px;
+                right: 10px;
+                background-color: transparent;
+                border: none;
+
+                svg {
+                    font-size: 50px;
+                    color: white;
+                }
+
+
+            }
+
+            .btn-next-image,
+            .btn-pre-image {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+
+                svg {
+                    background-color: #f9f1f1;
+                    width: 70px;
+                    height: 120px;
+                    // border-radius: 5px 0 0 5px;
+                    font-size: 30px;
+                    color: white;
+                }
+
+            }
+
+            .btn-next-image {
+                margin-left: auto;
+
+                svg {
+                    border-radius: 5px 0 0 5px;
+                }
+            }
+
+            .btn-pre-image {
+                margin-right: auto;
+
+                svg {
+                    border-radius: 0 5px 5px 0;
+                }
+            }
+        }
+
+        .gallery-left {
+            flex: 2;
+
+
+        }
+    }
+
+
+
+
+
+}

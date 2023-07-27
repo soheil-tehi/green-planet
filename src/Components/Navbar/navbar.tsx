@@ -40,7 +40,7 @@ function Navbar() {
                     <span>تماس با ما</span>
                 </NavLink>
                 <NavLink className={({ isActive }) => isActive ? "active nav-link" : "nav-link"}
-                    to="">
+                    to="/about-us">
                     <BsInfoSquareFill />
                     <span>درباره ما</span>
                 </NavLink>
