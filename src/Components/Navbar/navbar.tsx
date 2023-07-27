@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import LogoImg from '../../assets/Images/del.png';
+import LogoImg from '../../assets/Images/logo.png';
 import { NavLink } from 'react-router-dom';
 import { PiPottedPlantFill } from 'react-icons/pi';
 import { MdArticle } from 'react-icons/md';
