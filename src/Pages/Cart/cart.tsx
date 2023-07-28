@@ -2,7 +2,8 @@ import { Fragment, useState } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { IoIosPricetags } from 'react-icons/io';
-import { PiFlowerTulipThin,PiPottedPlantFill } from 'react-icons/pi';
+import { PiPottedPlantFill } from 'react-icons/pi';
+import { BsBoxSeam } from 'react-icons/bs';
 import LogoImg from '../../assets/Images/logo.png';
 import { useNavigate } from 'react-router-dom';
 import './cart.scss';
@@ -22,8 +23,6 @@ function Cart() {
 
     const [cartItems, setCartItems] = useState([""]);
     const navigate = useNavigate();
-
-
 
     if (cartItems.length == 0) {
         return (
@@ -101,7 +100,7 @@ function Cart() {
                         <button>ثبت</button>
                     </div>
                     <div className="left-info">
-                        <PiFlowerTulipThin />
+                        <BsBoxSeam />
                         بسته‌های پستی طی ۷۲ ساعت کاری ارسال می‌شوند.
                     </div>
                 </div>

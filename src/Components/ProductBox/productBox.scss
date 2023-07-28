@@ -1,0 +1,26 @@
+@import '../../Sass/-variables.scss';
+
+.productBox-container {
+    border: 1px solid $primary-color;
+    width: 30%;
+    @include my-border;
+
+    .product-img-wrapper {
+        // width: 100%;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    .productBox-info {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    button{
+        @include my-button;
+        margin: 10px auto;
+    }
+}

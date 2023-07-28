@@ -20,12 +20,39 @@
         gap: 20px;
 
         .productsMain-box {
-            // border: 1px solid red;
             @include my-border;
             flex: 1;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            border: 1px solid $primary-color;
+            border-radius: 5px;
+            overflow: hidden;
 
             img {
                 width: 100%;
+            }
+
+            .product-box-info {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.3s;
+                background-color: $primary-color;
+                border-top: 1px solid $primary-color;
+                gap: 5px;
+
+                svg {
+                    font-size: 25px;
+                }
+            }
+
+            &:hover {
+                .product-box-info {
+                    background-color: white;
+                    color: $second-color
+                }
             }
         }
     }

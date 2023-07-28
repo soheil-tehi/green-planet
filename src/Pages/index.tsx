@@ -6,6 +6,9 @@ import Cart from './Cart/cart';
 import Register from './Register/register';
 import Products from './Products/products';
 import NotFound from './NotFound/notFound';
+import HousePlants from './Products/HousePlants/housePlants';
+import Cactus from './Products/Cactus/cactus';
+import Succulent from './Products/Succulent/succulent';
 
 export {
     MainPage,
@@ -15,5 +18,8 @@ export {
     Cart,
     Register,
     Products,
-    NotFound
+    NotFound,
+    HousePlants,
+    Cactus,
+    Succulent,
 }

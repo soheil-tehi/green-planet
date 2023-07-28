@@ -12,7 +12,7 @@ function Footer() {
                         </div>
                         <ul className='right-item'>
                             <Link to="/" className='right-item-link'><li>خانه</li></Link>
-                            <Link to="" className='right-item-link'><li>محصولات</li></Link>
+                            <Link to="/products" className='right-item-link'><li>محصولات</li></Link>
                             <Link to="" className='right-item-link'><li>مقالات</li></Link>
                             <Link to="/contact-us" className='right-item-link'><li>تماس با ما</li></Link>
                             <Link to="/about-us" className='right-item-link'><li>درباره ما</li></Link>
@@ -50,7 +50,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="copyright">
-                  <p>© تمامی حقوق برای سایت گل و گیاه نام گلخانه محفوظ است.</p>
+                    <p>© تمامی حقوق برای سایت گل و گیاه نام گلخانه محفوظ است.</p>
                 </div>
             </div>
         </footer>
