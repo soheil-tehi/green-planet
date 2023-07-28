@@ -1,0 +1,33 @@
+@import '../../Sass/-variables.scss';
+
+.notFound-container {
+    width: 90%;
+    margin: 150px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .img-wrapper {
+        width: 520px;
+
+        img {
+            border: 1px solid $primary-color;
+            border-radius: 5px;
+            width: 100%
+        }
+    }
+
+    .btn-products {
+        @include my-button;
+        font-size: 18px;
+        margin: 50px auto;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .img-wrapper {
+        width: 330px !important;
+    }
+}

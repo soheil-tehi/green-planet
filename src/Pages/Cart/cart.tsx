@@ -2,12 +2,10 @@ import { Fragment, useState } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { IoIosPricetags } from 'react-icons/io';
-import { PiFlowerTulipThin } from 'react-icons/pi';
-import { PiPottedPlantFill } from 'react-icons/pi';
+import { PiFlowerTulipThin,PiPottedPlantFill } from 'react-icons/pi';
 import LogoImg from '../../assets/Images/logo.png';
-
-import './cart.scss';
 import { useNavigate } from 'react-router-dom';
+import './cart.scss';
 
 
 // fake data

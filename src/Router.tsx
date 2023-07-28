@@ -1,4 +1,4 @@
-import { MainPage, ContactUs, AboutUs, Login, Cart, Register, Products } from './Pages/index';
+import { MainPage, ContactUs, AboutUs, Login, Cart, Register, Products, NotFound } from './Pages/index';
 
 const routers = [
     { path: "/", element: <MainPage /> },
@@ -8,6 +8,7 @@ const routers = [
     { path: "/cart", element: <Cart /> },
     { path: "/register", element: <Register /> },
     { path: "/products", element: <Products /> },
+    { path: "*", element: <NotFound /> },
 ]
 
 export default routers;
