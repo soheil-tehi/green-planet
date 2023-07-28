@@ -17,7 +17,7 @@ function Navbar() {
             <div className="nav-logo">
                 <NavLink to="/">
 
-                <img src={LogoImg} alt="logo" />
+                    <img src={LogoImg} alt="logo" />
                 </NavLink>
             </div>
             <div className='nav-item' data-flag={isClose}>
@@ -56,12 +56,12 @@ function Navbar() {
                 }
             </div>
             <div className='nav-cart' >
-                <NavLink to="/login">
+                <NavLink className={({ isActive }) => isActive ? "userActive" : ""} to="/login">
                     <BiUser />
                 </NavLink>
                 <div className='divider'></div>
-                <NavLink to="/cart">
-
+                <NavLink className={({ isActive }) => isActive ? "cartActive" : ""}
+                    to="/cart">
                     <BiCartAlt />
                 </NavLink>
             </div>

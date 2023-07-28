@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { AiFillHeart } from 'react-icons/ai';
 import { TbFileInfo } from 'react-icons/tb';
 import { MdAir } from 'react-icons/md';
@@ -6,6 +7,7 @@ import { GiStrong } from 'react-icons/gi';
 import './purposes.scss';
 
 function Purposes() {
+    const navigate = useNavigate();
     return (
         <section className='purpose-container'>
             <div className='purpose-right'>
@@ -25,7 +27,7 @@ function Purposes() {
                     </p>
                     <div className='right-btn'>
                         <TbFileInfo />
-                        <a href="#">درباره ما</a>
+                        <a onClick={() => navigate("/about-us")} href="#">درباره ما</a>
                     </div>
                 </div>
             </div>

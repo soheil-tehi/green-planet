@@ -4,6 +4,7 @@ import AboutUs from './AboutUs/aboutUs';
 import Login from './Login/login';
 import Cart from './Cart/cart';
 import Register from './Register/register';
+import Products from './Products/products';
 
 export {
     MainPage,
@@ -11,5 +12,6 @@ export {
     AboutUs,
     Login,
     Cart,
-    Register
+    Register,
+    Products
 }

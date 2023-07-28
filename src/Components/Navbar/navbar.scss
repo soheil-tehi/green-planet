@@ -24,15 +24,16 @@
         gap: 20px;
         transition: all 0.5s ease-in-out;
 
-        a {
+        .nav-link {
+            @include my-flex;
+            gap: 5px;
             text-decoration: none;
             color: $primary-color;
             font-weight: 600;
         }
 
-        .nav-link {
-            @include my-flex;
-            gap: 5px;
+        .active {
+            color: $second-color;
         }
     }
 
@@ -43,26 +44,33 @@
     .nav-cart {
         @include my-flex;
         gap: 20px;
-  
+
 
         .divider::after {
             content: "|";
         }
 
-        a{
+        .userActive,
+        .cartActive {
+            color: $primary-color;
+        }
+
+        a {
             color: black;
             display: flex;
-            
+
             svg {
                 cursor: pointer;
                 font-size: 25px;
                 transition: all 0.2s;
-                
+
                 &:hover {
                     color: $primary-color;
                 }
             }
         }
+
+
     }
 
     .nav-mini {
