@@ -130,3 +130,25 @@
         }
     }
 }
+
+@media screen and (max-width:700px) {
+    .contact-wrapper {
+        flex-direction: column;
+
+        .right-top {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media screen and (min-width:700px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .contact-wrapper {
+        flex-direction: row;
+    }
+}

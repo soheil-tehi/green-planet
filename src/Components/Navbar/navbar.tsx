@@ -28,7 +28,7 @@ function Navbar() {
                     <span>خانه</span>
                 </NavLink>
                 <NavLink className={({ isActive }) => isActive ? "active nav-link" : "nav-link"}
-                    to="">
+                    to="/products">
                     <PiPottedPlantFill />
                     <span>محصولات</span>
                 </NavLink>
