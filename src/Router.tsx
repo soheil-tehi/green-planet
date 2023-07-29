@@ -1,4 +1,4 @@
-import { MainPage, ContactUs, AboutUs, Login, Cart, Register, Products, NotFound, Succulent, HousePlants, Cactus } from './Pages/index';
+import { MainPage, ContactUs, AboutUs, Login, Cart, Register, Products, NotFound, Succulent, HousePlants, Cactus, ShowProduct } from './Pages/index';
 
 const routers = [
     { path: "/", element: <MainPage /> },
@@ -11,6 +11,7 @@ const routers = [
     { path: "/products/succulent", element: <Succulent /> },
     { path: "/products/housePlants", element: <HousePlants /> },
     { path: "/products/cactus", element: <Cactus /> },
+    { path: "/products/:id", element: <ShowProduct /> },
     { path: "*", element: <NotFound /> },
 ]
 

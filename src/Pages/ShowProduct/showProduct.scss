@@ -1,0 +1,153 @@
+@import '../../Sass/-variables.scss';
+
+.showProduct-container {
+    margin: 100px auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .showProduct-info {
+        display: flex;
+        // flex-wrap: wrap;
+        // width: 70%;
+        // margin: 0 auto;
+        gap: 20px;
+
+        .info-right {
+            border: 1px solid $primary-color;
+            @include my-border;
+            flex: 30%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                margin: 0 auto;
+                display: block;
+                border-radius: 5px;
+            }
+        }
+
+        .info-middle {
+            flex: 30%;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            background-color: #eee;
+            justify-content: space-between;
+            border: 1px solid $primary-color;
+            @include my-border;
+
+            h2 {
+                text-align: center;
+            }
+
+            .select-color {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                select {
+                    border: 2px solid $primary-color;
+                    border-radius: 5px;
+                    padding: 5px;
+                    width: 50%;
+                }
+            }
+
+            button {
+                @include my-button;
+                // width: 60%;
+                width: auto;
+                margin: 0 auto;
+                font-weight: 600;
+                font-size: 18px;
+            }
+        }
+
+    }
+
+    .info-left {
+        flex: 20%;
+
+        display: flex;
+        // justify-content: center;
+        // align-items: center;
+        gap: 20px;
+
+        .info-left-replece-free {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            border: 1px solid $primary-color;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #eee;
+            justify-content: center;
+            align-items: center;
+
+
+            h4 {
+                text-align: center;
+                margin: 5px 0;
+            }
+
+            svg {
+                font-size: 32px;
+                color: $primary-color;
+                margin: 0 auto;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    }
+
+    .showProduct-description {
+        border: 1px solid $primary-color;
+        border-radius: 5px;
+        @include my-border;
+        display: flex;
+        gap: 20px;
+
+        .desc-img-wrapper {
+            flex: 1;
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .desc-data-wrapper {
+            background-color: red;
+            flex: 1;
+
+        }
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .showProduct-info {
+        flex-direction: column;
+
+        .info-middle {
+            gap: 15px;
+
+            button {
+                width: 100% !important;
+            }
+        }
+
+        .info-left {
+            flex-direction: row !important;
+            padding: 5px;
+        }
+    }
+
+    .showProduct-description {
+        flex-direction: column;
+    }
+}

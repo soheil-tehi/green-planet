@@ -4,6 +4,7 @@
     border: 1px solid $primary-color;
     width: 20%;
     @include my-border;
+    cursor: pointer;
 
     .product-img-wrapper {
         // width: 100%;
