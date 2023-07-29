@@ -2,13 +2,13 @@
 
 .productBox-container {
     border: 1px solid $primary-color;
-    width: 30%;
+    width: 20%;
     @include my-border;
 
     .product-img-wrapper {
         // width: 100%;
 
-        img{
+        img {
             width: 100%;
         }
     }
@@ -19,8 +19,43 @@
         justify-content: space-between;
     }
 
-    button{
-        @include my-button;
+    button {
+        // @include my-button;
+        padding: 8px 12px;
+        border-radius: 50px;
+        background-color: $primary-color;
+        border: 1px solid transparent;
         margin: 10px auto;
+        cursor: pointer;
+        font-weight: 600;
+        color: $second-color;
+        transition: all 0.4s;
+        width: 90%;
+        display: block;
+
+        &:hover {
+            background-color: white;
+            border-color: $primary-color;
+            
+        }
+    }
+}
+
+
+@media screen and (max-width:700px) {
+    .productBox-container {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:700px) {
+    .productBox-container {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .productBox-container {
+        width: 20%;
     }
 }

@@ -9,6 +9,7 @@ import NotFound from './NotFound/notFound';
 import HousePlants from './Products/HousePlants/housePlants';
 import Cactus from './Products/Cactus/cactus';
 import Succulent from './Products/Succulent/succulent';
+import ShowProduct from './ShowProduct/showProduct';
 
 export {
     MainPage,
@@ -22,4 +23,5 @@ export {
     HousePlants,
     Cactus,
     Succulent,
+    ShowProduct,
 }
