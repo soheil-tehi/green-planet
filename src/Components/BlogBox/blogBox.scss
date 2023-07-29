@@ -1,0 +1,71 @@
+@import '../../Sass/-variables.scss';
+
+.blog-box-container {
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    width: 32%;
+    overflow: hidden;
+    cursor: pointer;
+
+    .blog-img-wrapper {
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .blog-box-info {
+        padding: 5px;
+
+        .box-info-date-view {
+            display: flex;
+            justify-content: space-between;
+            color:#777;
+            gap: 5px;
+
+            .info-date-wrapper {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+
+                &:last-child {
+                    svg {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        h3{
+            color: #333 ;
+            margin: 5px 0;
+        }
+
+        .box-info-desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-size: 14px;
+            color: #777;
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .blog-box-container {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:700px) {
+    .blog-box-container {
+        width: 48%;
+    }
+}
+
+@media screen and (min-width:1252px) {
+    .blog-box-container {
+        width: 32%;
+    }
+}
