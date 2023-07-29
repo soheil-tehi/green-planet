@@ -3,8 +3,12 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { LuSend } from 'react-icons/lu';
 import { TfiLocationPin } from 'react-icons/tfi';
 import './contactUs.scss';
+import useScrollToTop from '../../Components/useScrollToTop';
 
 function ContactUs() {
+    
+    useScrollToTop();
+
     return (
         <section className='contact-container'>
             <div className='contant-head'>

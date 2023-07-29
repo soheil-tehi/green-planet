@@ -2,9 +2,11 @@ import { useNavigate } from 'react-router-dom';
 import { PiPottedPlantFill } from 'react-icons/pi';
 import NotFoundImg from '../../assets/Images/img-404.jpg';
 import './notFound.scss';
+import useScrollToTop from '../../Components/useScrollToTop';
 
 function NotFound() {
     const navigate = useNavigate();
+    useScrollToTop();
 
     return (
         <div className='notFound-container'>

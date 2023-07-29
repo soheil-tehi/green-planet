@@ -7,6 +7,7 @@ import { BsBoxSeam } from 'react-icons/bs';
 import LogoImg from '../../assets/Images/logo.png';
 import { useNavigate } from 'react-router-dom';
 import './cart.scss';
+import useScrollToTop from '../../Components/useScrollToTop';
 
 
 // fake data
@@ -23,6 +24,8 @@ function Cart() {
 
     const [cartItems, setCartItems] = useState([""]);
     const navigate = useNavigate();
+    useScrollToTop();
+
 
     if (cartItems.length == 0) {
         return (

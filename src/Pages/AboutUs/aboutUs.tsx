@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import useScrollToTop from '../../Components/useScrollToTop';
 import './aboutUs.scss';
 
 interface ImageDataProps {
@@ -25,6 +26,8 @@ const images = [
 function AboutUs() {
 
     const [imageData, setImageData] = useState<ImageDataProps>({ image: "", i: 0 });
+
+    useScrollToTop();
 
     const viewImage = (image: string, i: number) => {
         setImageData({ image, i })

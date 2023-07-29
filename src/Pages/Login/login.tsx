@@ -5,11 +5,14 @@ import { FiLogIn } from 'react-icons/fi';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import jwtDecode from 'jwt-decode';
 import './login.scss';
+import useScrollToTop from '../../Components/useScrollToTop';
 
 function Login() {
 
+
     const [showPass, setShowPass] = useState(false);
     const navigate = useNavigate();
+    useScrollToTop();
 
     const toggleShowPass = () => {
         setShowPass(!showPass);

@@ -6,10 +6,13 @@ import ProductsMain from '../../Components/mainPage/productsMain'
 import Purposes from '../../Components/mainPage/purposes'
 import Say from '../../Components/mainPage/say'
 import Service from '../../Components/mainPage/service'
+import useScrollToTop from '../../Components/useScrollToTop'
 
 function MianPage() {
-
+    useScrollToTop();
     const [isMobile, setIsMobile] = useState(false);
+
+
 
     useEffect(() => {
         function handleResize() {

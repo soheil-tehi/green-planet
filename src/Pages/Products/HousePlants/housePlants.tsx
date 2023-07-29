@@ -1,10 +1,11 @@
-import { useNavigate } from 'react-router-dom';
 import ProductBox from '../../../Components/ProductBox/productBox'
+import useScrollToTop from '../../../Components/useScrollToTop';
 import './housePlants.scss';
 
 function HousePlants() {
+  
+  useScrollToTop();
 
-  const navigate = useNavigate();
   return (
     <div className='housePlants-container'>
       <h2>گیاهان آپارتمانی</h2>

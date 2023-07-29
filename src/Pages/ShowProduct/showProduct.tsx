@@ -2,8 +2,13 @@ import { LuReplace } from 'react-icons/lu';
 import { MdOutlineLocalShipping } from 'react-icons/md';
 import ImageTest from '../../assets/Images/del2.jpg';
 import './showProduct.scss';
+import { useEffect } from 'react';
+import useScrollToTop from '../../Components/useScrollToTop';
 
 function ShowProduct() {
+
+    useScrollToTop();
+
     return (
         <div className="showProduct-container">
             <div className="showProduct-info">

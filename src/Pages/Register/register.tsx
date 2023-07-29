@@ -5,9 +5,11 @@ import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import jwtDecode from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 import './register.scss';
+import useScrollToTop from '../../Components/useScrollToTop';
 
 function Register() {
 
+    useScrollToTop();
     const navigate = useNavigate();
     const [showFirstPass, setShowFirstPass] = useState(false);
     const [showSecondPass, setShowSecondPass] = useState(false);
