@@ -1,11 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import { BsCalendarWeek } from 'react-icons/bs';
 import { AiOutlineEye } from 'react-icons/ai';
-import IMgText from '../../assets/Images/del2.jpg'
+import IMgText from '../../assets/Images/del2.jpg';
 import './blogBox.scss';
 
 function BlogBox() {
+
+    const navigate = useNavigate();
+
     return (
-        <div className="blog-box-container">
+        <div className="blog-box-container" onClick={() => navigate("/blogs/32")}>
             <div className='blog-img-wrapper'>
                 <img src={IMgText} alt="" />
             </div>

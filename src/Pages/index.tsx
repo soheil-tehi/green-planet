@@ -11,6 +11,7 @@ import Cactus from './Products/Cactus/cactus';
 import Succulent from './Products/Succulent/succulent';
 import ShowProduct from './ShowProduct/showProduct';
 import Blogs from './Blogs/blogs';
+import ShowBlog from './ShowBlog/showBlog';
 
 export {
     MainPage,
@@ -26,4 +27,5 @@ export {
     Succulent,
     ShowProduct,
     Blogs,
+    ShowBlog,
 }

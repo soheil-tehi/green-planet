@@ -20,7 +20,7 @@
         .box-info-date-view {
             display: flex;
             justify-content: space-between;
-            color:#777;
+            color: #777;
             gap: 5px;
 
             .info-date-wrapper {
@@ -28,16 +28,14 @@
                 align-items: center;
                 gap: 3px;
 
-                &:last-child {
-                    svg {
-                        font-size: 20px;
-                    }
+                p {
+                    font-size: 12px;
                 }
             }
         }
 
-        h3{
-            color: #333 ;
+        h3 {
+            color: #333;
             margin: 5px 0;
         }
 
