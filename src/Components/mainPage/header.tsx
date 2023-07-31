@@ -8,12 +8,12 @@ function Header() {
             <div className='right'>
                 <div className='header-info'>
 
-                <h1>گیاهان سرسبز و زیبای زینتی خانه </h1>
-                <h2> خانه خود را با گل  زیبا و آرامش بخش کنید </h2>
+                    <h1>گیاهان سرسبز و زیبای زینتی خانه </h1>
+                    <h2> خانه خود را با گل  زیبا و آرامش بخش کنید </h2>
                 </div>
             </div>
             <div className='left'>
-                <div className='header-img'>                
+                <div className='header-img'>
                 </div>
                 <Animate />
             </div>
