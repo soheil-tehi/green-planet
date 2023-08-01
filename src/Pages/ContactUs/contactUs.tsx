@@ -6,14 +6,14 @@ import './contactUs.scss';
 import useScrollToTop from '../../Components/useScrollToTop';
 
 function ContactUs() {
-    
+
     useScrollToTop();
 
     return (
         <section className='contact-container'>
             <div className='contant-head'>
                 <h2>تماس با ما</h2>
-                <p>تمامی مشتریان میتوانند جهت کسب اطلاعات بیشتر از محصولات سایت گلستان با شماره 88468729 -021 تماس حاصل نمایند و یا با فرم زیر در ارتباط باشند</p>
+                <p>تمامی مشتریان میتوانند جهت کسب اطلاعات بیشتر از محصولات سایت سبزینه با شماره 88468729 -021 تماس حاصل نمایند و یا با فرم زیر در ارتباط باشند</p>
             </div>
             <div className="contact-wrapper">
                 <div className='contact-right'>
@@ -26,7 +26,7 @@ function ContactUs() {
                         <div className='right-call'>
                             <HiOutlineMail />
                             <h3>ایمیل</h3>
-                            <p>soheil.st2@gmail.com</p>
+                            <p>sabzineh@gmail.com</p>
                         </div>
                     </div>
                     <div className="right-down">
@@ -51,7 +51,7 @@ function ContactUs() {
                         <div className='right-Address'>
                             <TfiLocationPin />
                             <h3>آدرس</h3>
-                            <p>دفتر مرکزی: تهران، خیابان کریمخان زند، خیابان ایرانشهر، خیابان بهشهر، پلاک 37، عمارت گلستان</p>
+                            <p>دفتر مرکزی: تهران، خیابان کریمخان زند، خیابان ایرانشهر، خیابان بهشهر، پلاک 37، عمارت سبزینه</p>
                         </div>
                     </div>
                     <div className="left-down">

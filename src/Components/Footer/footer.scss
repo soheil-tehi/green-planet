@@ -114,6 +114,12 @@
                 padding: 20px;
                 border-radius: 0 0 5px 5px;
 
+                h2{
+                    font-size: 30px;
+                    margin-bottom: 10px;
+                    color: $second-color;
+                }
+
                 .footer-social {
                     display: flex;
                     gap: 10px;

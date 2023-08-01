@@ -16,7 +16,6 @@
         p {
             line-height: 2.15;
             font-size: 18px;
-            // font-size: 1.4rem;  
         }
     }
 
@@ -24,28 +23,19 @@
         margin-top: 40px;
         display: flex;
 
-
-
         .gallery-right {
-            // background-color: red;
             flex: 1;
             padding: 20px;
 
             ul {
                 list-style: none;
-                /* Remove default bullets */
             }
 
             ul li:before {
                 content: "\2022";
-                /* Add bullet point */
                 color: $primary-color;
-                /* Set bullet color */
                 display: inline-block;
-                /* Ensure bullet is on its own line */
                 width: 10px;
-                /* Set width of bullet */
-                // margin-left: 1px; /* Move bullet to left of text */
             }
         }
 
@@ -64,13 +54,11 @@
             overflow: hidden;
             z-index: 4;
 
-
             .image-in-gallery {
                 width: auto;
                 max-width: 90%;
                 max-height: 70%;
                 border-radius: 5px;
-
             }
 
             .btn-close-image {
@@ -85,8 +73,6 @@
                     font-size: 50px;
                     color: white;
                 }
-
-
             }
 
             .btn-next-image,
@@ -99,7 +85,6 @@
                     background-color: #f9f1f1;
                     width: 70px;
                     height: 120px;
-                    // border-radius: 5px 0 0 5px;
                     font-size: 30px;
                     color: white;
                 }
@@ -125,13 +110,12 @@
 
         .gallery-left {
             flex: 2;
-
-
         }
     }
+}
 
-
-
-
-
+@media screen and (max-width:800px) {
+    .about-gallery{
+        flex-direction: column;
+    }
 }

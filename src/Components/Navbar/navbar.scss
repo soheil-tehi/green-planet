@@ -12,11 +12,26 @@
     z-index: 4;
 
     .nav-logo {
-        width: 80px;
         border-radius: 10px;
         overflow: hidden;
-        img {
-            width: 100%;
+
+        .nav-logo-link{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+
+            h3{
+                text-decoration: none;
+                color: $second-color;
+                font-size: 20px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            img {
+                width: 80px;
+            }
         }
     }
 
@@ -31,6 +46,10 @@
             text-decoration: none;
             color: $primary-color;
             font-weight: 600;
+        }
+
+        span {
+            font-size: 18px;
         }
 
         .active {
@@ -83,7 +102,7 @@
     }
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:740px) {
     .nav-mini {
         display: block !important;
         margin-left: auto;
@@ -97,7 +116,6 @@
 
     .nav-container {
         position: relative;
-
         .nav-item {
             position: absolute;
             z-index: 2;

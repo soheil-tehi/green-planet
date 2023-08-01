@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { AiFillHeart } from 'react-icons/ai';
+import { motion } from 'framer-motion';
 import { TbFileInfo } from 'react-icons/tb';
 import { MdAir } from 'react-icons/md';
 import { RiMentalHealthFill } from 'react-icons/ri';
@@ -10,8 +11,14 @@ function Purposes() {
     const navigate = useNavigate();
     return (
         <section className='purpose-container'>
-            <div className='purpose-right'>
-                <div className='right-wrapper'>
+            <motion.div
+                initial={{ y: 300, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                viewport={{ once: true }}
+                className='purpose-right'>
+                <div
+                    className='right-wrapper'>
                     <h3>اهمیت و مزایای نگهداری گل در منزل و محل کار</h3>
                     <p>
                         فواید بی نظیر نگهداری گل و گلدان در منزل و شرکت بر هیچکس
@@ -30,8 +37,13 @@ function Purposes() {
                         <a onClick={() => navigate("/about-us")} href="#">درباره ما</a>
                     </div>
                 </div>
-            </div>
-            <div className='purpose-left'>
+            </motion.div>
+            <motion.div
+                initial={{ y: 300, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                viewport={{ once: true }}
+                className='purpose-left'>
                 <div className='left-wrapper'>
                     <div className='purpose-info-top'>
 
@@ -88,7 +100,7 @@ function Purposes() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section >
     )
 }

@@ -19,7 +19,7 @@ function ShowBlog() {
                 <img src={ImgTest} alt="" />
                 <h2>همه چیز درباره روش نگهداری گیاه بامبو</h2>
                 <div className='right-info'>
-                    <p>نویسنده : {"گلستانی"}</p>
+                    <p>نویسنده : {"سبزینهی"}</p>
                     <p>به روز رسانی شده در : {"1402/04/20"}</p>
                 </div>
                 <div className='read-time'>

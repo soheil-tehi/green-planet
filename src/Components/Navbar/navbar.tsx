@@ -2,8 +2,7 @@ import { useState } from 'react';
 import LogoImg from '../../assets/Images/logo.png';
 import { NavLink } from 'react-router-dom';
 import { PiPottedPlantFill } from 'react-icons/pi';
-import { MdArticle } from 'react-icons/md';
-import { RiContactsBook2Fill } from 'react-icons/ri';
+import { RiArticleFill, RiContactsBook2Fill } from 'react-icons/ri';
 import { BsInfoSquareFill } from 'react-icons/bs';
 import { AiTwotoneHome, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { BiCartAlt, BiUser } from 'react-icons/bi';
@@ -15,9 +14,11 @@ function Navbar() {
     return (
         <nav className="nav-container" >
             <div className="nav-logo">
-                <NavLink to="/">
-
+                <NavLink to="/"
+                    className="nav-logo-link"
+                >
                     <img src={LogoImg} alt="logo" />
+                    <h3>سبزینه</h3>
                 </NavLink>
             </div>
             <div className='nav-item' data-flag={isClose}>
@@ -34,7 +35,7 @@ function Navbar() {
                 </NavLink>
                 <NavLink className={({ isActive }) => isActive ? "active nav-link" : "nav-link"}
                     to="/blogs">
-                    <MdArticle />
+                    <RiArticleFill />
                     <span>مقالات</span>
                 </NavLink>
                 <NavLink className={({ isActive }) => isActive ? "active nav-link" : "nav-link"}

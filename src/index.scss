@@ -1,8 +1,10 @@
 @import './Sass/-variables.scss';
 
 @font-face {
-    font-family: "Parastoo";
-    src: url("./assets/font/Parastoo.ttf") format("truetype");
+    font-family: "ParastoO";
+    src: url('./assets/font/Parasto/Parastoo-FD.eot');
+    src: url('./assets/font/Parasto/Parastoo-FD.ttf') format('truetype'),
+        url('./assets/font/Parasto/Parastoo-FD.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -11,7 +13,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Parastoo', sans-serif;
+    font-family: 'Parastoo';
 }
 
 ::-webkit-scrollbar {
