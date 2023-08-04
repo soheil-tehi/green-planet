@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-oauth/google": "^0.11.1",
+    "axios": "^1.4.0",
     "framer-motion": "^10.15.0",
     "jwt-decode": "^3.1.2",
     "prop-types": "^15.8.1",
@@ -22,6 +23,7 @@
     "sass": "^1.64.1"
   },
   "devDependencies": {
+    "@types/node": "^20.4.6",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/react-responsive-masonry": "^2.1.0",

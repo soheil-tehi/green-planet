@@ -9,9 +9,6 @@
 
     .showProduct-info {
         display: flex;
-        // flex-wrap: wrap;
-        // width: 70%;
-        // margin: 0 auto;
         gap: 20px;
 
         .info-right {
@@ -69,10 +66,7 @@
 
     .info-left {
         flex: 20%;
-
         display: flex;
-        // justify-content: center;
-        // align-items: center;
         gap: 20px;
 
         .info-left-replece-free {
@@ -85,7 +79,6 @@
             background-color: #eee;
             justify-content: center;
             align-items: center;
-
 
             h4 {
                 text-align: center;
@@ -123,7 +116,6 @@
         .desc-data-wrapper {
             background-color: red;
             flex: 1;
-
         }
     }
 }

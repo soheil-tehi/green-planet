@@ -1,9 +1,9 @@
 import { LuReplace } from 'react-icons/lu';
 import { MdOutlineLocalShipping } from 'react-icons/md';
 import ImageTest from '../../assets/Images/del2.jpg';
-import './showProduct.scss';
 import { useEffect } from 'react';
 import useScrollToTop from '../../Components/useScrollToTop';
+import './showProduct.scss';
 
 function ShowProduct() {
 
@@ -47,16 +47,12 @@ function ShowProduct() {
                     <p>برای سبد خرید بالای 200.000 تومان ارسال رایگان انجام خواهد شد.</p>
                 </div>
             </div>
-
-
-
-
             <div className="showProduct-description">
-                <div className='desc-data-wrapper'>
-                    <h3>توضیحات</h3>
-                </div>
                 <div className='desc-img-wrapper'>
                     <img src={ImageTest} alt="" />
+                </div>
+                <div className='desc-data-wrapper'>
+                    <h3>توضیحات</h3>
                 </div>
             </div>
         </div>
