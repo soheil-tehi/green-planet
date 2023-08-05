@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { IoIosPricetags } from 'react-icons/io';
@@ -6,26 +6,40 @@ import { PiPottedPlantFill } from 'react-icons/pi';
 import { BsBoxSeam } from 'react-icons/bs';
 import LogoImg from '../../assets/Images/logo.png';
 import { useNavigate } from 'react-router-dom';
-import './cart.scss';
 import useScrollToTop from '../../Components/useScrollToTop';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../Redux/store';
+import { addCount, minusCount, removeFromCart } from '../../Redux/cartSlice';
+import './cart.scss';
 
-
-// fake data
-const db = [
-    { id: 1, title: "دوره آموزشی طراحی داشبورد با Power BI", imgUrl: "https://www.mindinventory.com/blog/wp-content/uploads/2018/07/reactjs-gained.jpg", price: "200.000" },
-    { id: 2, title: "اموزش پروزه محور React ", imgUrl: "https://www.mindinventory.com/blog/wp-content/uploads/2018/07/reactjs-gained.jpg", price: "200.000" },
-    { id: 3, title: "دوره آموزشی طراحی داشبورد با Powبا Power BI", imgUrl: "https://www.mindinventory.com/blog/wp-content/uploads/2018/07/reactjs-gained.jpg", price: "200.000" },
-    { id: 4, title: "", imgUrl: "https://www.mindinventory.com/blog/wp-content/uploads/2018/07/reactjs-gained.jpg", price: "200.000" },
-    { id: 5, title: "دوره آموزشی طراحی داشبورد با Power BI", imgUrl: "https://www.mindinventory.com/blog/wp-content/uploads/2018/07/reactjs-gained.jpg", price: "200.000" },
-    { id: 6, title: "node js", imgUrl: "https://www.mindinventory.com/blog/wp-content/uploads/2018/07/reactjs-gained.jpg", price: "200.000" },
-]
+export const separate = (Number: any) => {
+    Number += "";
+    Number = Number.replace(",", "");
+    let x = Number.split(".");
+    let y = x[0];
+    let z = x.length > 1 ? "." + x[1] : "";
+    let rgx = /(\d+)(\d{3})/;
+    while (rgx.test(y)) y = y.replace(rgx, "$1" + "," + "$2");
+    return y + z;
+}
 
 function Cart() {
 
-    const [cartItems, setCartItems] = useState([""]);
-    const navigate = useNavigate();
     useScrollToTop();
+    const navigate = useNavigate();
 
+    const { cartItems } = useSelector((state: RootState) => state.cart);
+
+    const dispatch = useDispatch();
+
+
+    const totalPrice = () => {
+        let totalPrice = 0;
+        cartItems.map(item => {
+            totalPrice += item.price * item.count
+        });
+        return totalPrice;
+    }
 
     if (cartItems.length == 0) {
         return (
@@ -53,32 +67,33 @@ function Cart() {
                         </thead>
                         <tbody>
                             {
-                                db.map(item => (
-                                    <Fragment key={item.id}>
+                                cartItems.map(item => (
+                                    <Fragment key={item._id}>
                                         <tr >
                                             <td >
-                                               
-                                                    <div className='product-wrapepr'>
-                                                        <div className='product-img-wrapper'>
-                                                            <img src={item.imgUrl} alt="sss" />
-                                                        </div>
-                                                        <p>{item.title}</p>
+                                                <div className='product-wrapepr'>
+                                                    <div className='product-img-wrapper'>
+                                                        <img src={`http://localhost:5500/${item.imageCover}`} alt="sss" />
                                                     </div>
-                                             
+                                                    <p>{item.productName}</p>
+                                                </div>
                                             </td>
-                                         
-                                                <td>
-                                                    <div className='product-count'>
-                                                        <AiOutlinePlus style={{ color: "green" }} />
-                                                        <p>5</p>
-                                                        <AiOutlineMinus style={{ color: "red" }} />
-                                                    </div>
-                                                </td>
-                                                <td>{item.price}</td>
-                                                <td>
-                                                    <MdDeleteForever className='delete-icon' />
-                                                </td>
-                                         
+                                            <td>
+                                                <div className='product-count'>
+                                                    <AiOutlinePlus style={{ color: "green" }} onClick={() => dispatch(addCount(item._id))} />
+                                                    <p>{item.count}</p>
+                                                    {
+                                                        item.count == 1 ?
+                                                            <MdDeleteForever style={{ color: "red" }} onClick={() => dispatch(removeFromCart(item._id))} />
+                                                            :
+                                                            <AiOutlineMinus style={{ color: "red" }} onClick={() => dispatch(minusCount(item._id))} />
+                                                    }
+                                                </div>
+                                            </td>
+                                            <td>{separate(item.price * item.count)}</td>
+                                            <td>
+                                                <MdDeleteForever className='delete-icon' onClick={() => dispatch(removeFromCart(item._id))} />
+                                            </td>
                                         </tr>
                                     </Fragment>
                                 ))
@@ -94,7 +109,7 @@ function Cart() {
                         </div>
                         <div className='total-price-cost'>
                             <p>مجموع</p>
-                            <p>3.390.000</p>
+                            <p>{separate(totalPrice())}</p>
                         </div>
                         <button className='btn-buy'>ادامه جهت تسویه حساب</button>
                     </div>

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import TestImg from '../../assets/Images/del.jpg';
 import './productBox.scss';
+import { separate } from '../../Pages/Cart/cart';
 
 export interface PlantsProps {
     _id: string,
@@ -24,7 +25,7 @@ function ProductBox({ item }: { item: PlantsProps }) {
             </div>
             <div className='productBox-info'>
                 <h3>{item.productName}</h3>
-                <p>{item.price}</p>
+                <p>{separate(item.price)}</p>
             </div>
             <button>مشاهده جزئیات</button>
         </div>

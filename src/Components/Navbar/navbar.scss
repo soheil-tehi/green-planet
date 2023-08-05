@@ -15,13 +15,13 @@
         border-radius: 10px;
         overflow: hidden;
 
-        .nav-logo-link{
+        .nav-logo-link {
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
 
-            h3{
+            h3 {
                 text-decoration: none;
                 color: $second-color;
                 font-size: 20px;
@@ -70,6 +70,8 @@
             content: "|";
         }
 
+
+
         .userActive,
         .cartActive {
             color: $primary-color;
@@ -89,9 +91,11 @@
                 }
             }
         }
-
-
     }
+
+
+
+
 
     .nav-mini {
         display: none;
@@ -116,6 +120,7 @@
 
     .nav-container {
         position: relative;
+
         .nav-item {
             position: absolute;
             z-index: 2;

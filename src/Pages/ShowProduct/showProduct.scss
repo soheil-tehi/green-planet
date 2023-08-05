@@ -103,6 +103,9 @@
         @include my-border;
         display: flex;
         gap: 20px;
+        overflow: hidden;
+        background-color: #eee;
+
 
         .desc-img-wrapper {
             flex: 1;
@@ -114,8 +117,20 @@
         }
 
         .desc-data-wrapper {
-            background-color: red;
             flex: 1;
+            padding: 20px;
+
+            li{
+                list-style-type: none;
+
+            }
+
+            a{
+                // color: $second-color;
+                color: green;
+                text-decoration: none;
+            }
+
         }
     }
 }

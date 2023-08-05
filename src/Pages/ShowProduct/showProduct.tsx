@@ -7,7 +7,9 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductById } from '../../Redux/productsSlice';
 import { RootState } from '../../Redux/store';
+import { addToCart } from '../../Redux/cartSlice';
 import './showProduct.scss';
+import { separate } from '../Cart/cart';
 
 function ShowProduct() {
 
@@ -19,9 +21,7 @@ function ShowProduct() {
 
     useEffect(() => {
         dispatch(getProductById(id))
-
     }, [])
-    console.log("productById", productById);
 
     return (
         <div className="showProduct-container">
@@ -48,8 +48,8 @@ function ShowProduct() {
                                     <option value="white">زرد</option>
                                 </select>
                             </div>
-                            <h4>قیمت : <span>{productById.price}</span>  تومان</h4>
-                            <button>سفارش {productById.productName}</button>
+                            <h4>قیمت : <span>{separate(productById.price)}</span>  تومان</h4>
+                            <button onClick={() => dispatch(addToCart(productById))}>سفارش {productById.productName}</button>
                         </div>
                     </div>
                     <div className="info-left">
@@ -61,7 +61,7 @@ function ShowProduct() {
                         <div className='info-left-replece-free'>
                             <MdOutlineLocalShipping />
                             <h4>ارسال رایگان</h4>
-                            <p>برای سبد خرید بالای 200.000 تومان ارسال رایگان انجام خواهد شد.</p>
+                            <p>برای سبد خرید بالای 200,000 تومان ارسال رایگان انجام خواهد شد.</p>
                         </div>
                     </div>
                     <div className="showProduct-description">
@@ -70,6 +70,7 @@ function ShowProduct() {
                         </div>
                         <div className='desc-data-wrapper'>
                             <h3>توضیحات</h3>
+                            <div dangerouslySetInnerHTML={{ __html: productById.description }} />
                         </div>
                     </div>
                 </>
