@@ -18,7 +18,7 @@ function ProductBox({ item }: { item: PlantsProps }) {
     const navigate = useNavigate();
 
     return (
-        <div className='productBox-container' onClick={() => navigate("/products/25")}>
+        <div className='productBox-container' onClick={() => navigate(`/products/${item._id}`)}>
             <div className='product-img-wrapper'>
                 <img src={`http://localhost:5500/${item.imageCover}`} alt="" />
             </div>
