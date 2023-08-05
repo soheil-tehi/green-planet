@@ -1,6 +1,5 @@
 import { LuReplace } from 'react-icons/lu';
 import { MdOutlineLocalShipping } from 'react-icons/md';
-import ImageTest from '../../assets/Images/del2.jpg';
 import { useEffect } from 'react';
 import useScrollToTop from '../../Components/useScrollToTop';
 import { useParams } from 'react-router-dom';
@@ -8,8 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProductById } from '../../Redux/productsSlice';
 import { RootState } from '../../Redux/store';
 import { addToCart } from '../../Redux/cartSlice';
-import './showProduct.scss';
 import { separate } from '../Cart/cart';
+import './showProduct.scss';
 
 function ShowProduct() {
 

@@ -13,11 +13,15 @@ interface PlantsProps {
     imageCover: string,
     imageDescription: string,
     description: string,
+    category: string
 }
 
 
 interface InitialStateProps {
     productList: [],
+    housePlantsList: [],
+    succulentList: [],
+    cactusList: [],
     productById: PlantsProps,
     loading: boolean,
     hasError: boolean,
@@ -25,6 +29,9 @@ interface InitialStateProps {
 
 const initialState: InitialStateProps = {
     productList: [],
+    housePlantsList: [],
+    succulentList: [],
+    cactusList: [],
     productById: {
         _id: "",
         productName: "",
@@ -34,6 +41,7 @@ const initialState: InitialStateProps = {
         imageCover: "",
         imageDescription: "",
         description: "",
+        category: ""
     },
     loading: false,
     hasError: false
@@ -65,13 +73,17 @@ const productSlice = createSlice({
     initialState,
     reducers: {
         getAllProducts: (state, action) => {
+            console.log("🙏", action.payload);
+
             state.productList = action.payload;
+            state.housePlantsList = action.payload?.filter((item: PlantsProps) => item.category == "housePlant");
+            state.succulentList = action.payload?.filter((item: PlantsProps) => item.category == "succulent");
+            state.cactusList = action.payload?.filter((item: PlantsProps) => item.category == "cactus");
         },
         getProductById: (state, action) => {
             const productId = action.payload;
             const product = state.productList.filter((item: any) => item._id == productId)
             state.productById = product[0];
-
         }
     },
 

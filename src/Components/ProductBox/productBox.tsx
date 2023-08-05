@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import TestImg from '../../assets/Images/del.jpg';
-import './productBox.scss';
 import { separate } from '../../Pages/Cart/cart';
-
+import './productBox.scss';
 export interface PlantsProps {
     _id: string,
     productName: string,
@@ -12,6 +10,7 @@ export interface PlantsProps {
     imageCover: string,
     imageDescription: string,
     description: string,
+    category: string
 }
 
 function ProductBox({ item }: { item: PlantsProps }) {

@@ -1,5 +1,7 @@
+import { useDispatch } from 'react-redux';
 import ProductsMain from '../../Components/mainPage/productsMain'
 import useScrollToTop from '../../Components/useScrollToTop';
+import { getAllProducts, useGetAppProductsQuery } from '../../Redux/productsSlice';
 
 function Products() {
 
