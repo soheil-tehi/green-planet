@@ -1,17 +1,14 @@
+import { useDispatch } from 'react-redux';
 import BlogBox from '../../Components/BlogBox/blogBox';
 import useScrollToTop from '../../Components/useScrollToTop';
 import { BlogProps, getAllblogs, useGetAppBlogsQuery } from '../../Redux/blogSlice';
-import { useDispatch,  } from "react-redux";
 import './blogs.scss';
 
 function Blogs() {
 
     useScrollToTop();
-
-    const { data } = useGetAppBlogsQuery("/getblogs")
-
+    const { data } = useGetAppBlogsQuery("/getblogs");
     const dispatch = useDispatch();
-
     dispatch(getAllblogs(data));
 
     return (
@@ -22,9 +19,8 @@ function Blogs() {
                     <BlogBox item={item} key={item._id} />
                 ))
             }
-
         </div>
     )
 }
 
-export default Blogs
+export default Blogs;

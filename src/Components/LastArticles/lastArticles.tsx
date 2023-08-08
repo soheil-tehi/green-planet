@@ -1,17 +1,8 @@
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../Redux/store';
 import { BlogProps } from '../../Redux/blogSlice';
 import './lastArticles.scss';
-
-//Fake Data
-const articlesData = [
-    { id: 1, title: "کتاب یادگیری بوت استرپ ", imgUrl: "https://www.mindinventory.com/blog/wp-content/uploads/2018/07/reactjs-gained.jpg" },
-    { id: 2, title: "کتاب یادگیری بوت استرپ  ", imgUrl: "https://www.mindinventory.com/blog/wp-content/uploads/2018/07/reactjs-gained.jpg" },
-    { id: 4, title: "کتاب یادگیری بوت استرپ ری بوت استرپ  ", imgUrl: "https://www.mindinventory.com/blog/wp-content/uploads/2018/07/reactjs-gained.jpg" },
-    { id: 5, title: "کتاب یادگیری بوت استرپ  ", imgUrl: "https://www.mindinventory.com/blog/wp-content/uploads/2018/07/reactjs-gained.jpg" },
-    { id: 6, title: "کتاب یادگیری بوت استرپ  ", imgUrl: "https://www.mindinventory.com/blog/wp-content/uploads/2018/07/reactjs-gained.jpg" },
-]
 
 function LastArticles() {
 
@@ -32,7 +23,6 @@ function LastArticles() {
                 ))
             }
         </div>
-
     )
 }
 

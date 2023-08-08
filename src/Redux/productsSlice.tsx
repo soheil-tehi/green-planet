@@ -15,20 +15,12 @@ export interface PlantsProps {
 
 
 interface InitialStateProps {
-    // productList: [],
-    // housePlantsList: [],
-    // succulentList: [],
-    // cactusList: [],
     productById: PlantsProps,
     loading: boolean,
     hasError: boolean,
 }
 
 const initialState: InitialStateProps = {
-    // productList: [],
-    // housePlantsList: [],
-    // succulentList: [],
-    // cactusList: [],
     productById: {
         _id: "",
         productName: "",
@@ -91,17 +83,6 @@ const productSlice = createSlice({
     name: "products",
     initialState,
     reducers: {
-        getAllProducts: (state, action) => {
-            // state.productList = action.payload;
-            // state.housePlantsList = action.payload?.filter((item: PlantsProps) => item.category == "housePlant");
-            // state.succulentList = action.payload?.filter((item: PlantsProps) => item.category == "succulent");
-            // state.cactusList = action.payload?.filter((item: PlantsProps) => item.category == "cactus");
-        },
-        getProductById: (state, action) => {
-            // const productId = action.payload;
-            // const product = state.productList.filter((item: any) => item._id == productId)
-            // state.productById = product[0];
-        }
     },
 });
 
@@ -110,4 +91,3 @@ export const { useGetAppProductsQuery, } = productsApi;
 export const { useGetAppHousePlantsQuery } = housePlantsApi;
 export const { useGetAppSucculentPlantsQuery } = succulentPlantsApi;
 export const { useGetAppCactusPlantsQuery } = cactusPlantsApi;
-export const { getAllProducts, getProductById } = productSlice.actions;

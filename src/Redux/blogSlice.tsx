@@ -49,14 +49,11 @@ const blogSlice = createSlice({
         getAllblogs: (state, action) => {
             state.blogList = action.payload;
         },
-        getBlogById: (state, action) => {
-            const blogById = state.blogList.filter((item: BlogProps) => item._id == action.payload);
-            state.blogById = blogById[0];
-        }
     },
 });
 
 export default blogSlice.reducer;
 export const { useGetAppBlogsQuery } = blogsApi;
-export const { getAllblogs, getBlogById } = blogSlice.actions;
+export const { getAllblogs } = blogSlice.actions;
+
 
