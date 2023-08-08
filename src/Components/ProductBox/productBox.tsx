@@ -1,17 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { separate } from '../../Pages/Cart/cart';
+import { PlantsProps } from '../../Redux/productsSlice';
 import './productBox.scss';
-export interface PlantsProps {
-    _id: string,
-    productName: string,
-    price: number,
-    heightPlant: number,
-    heightPot: number,
-    imageCover: string,
-    imageDescription: string,
-    description: string,
-    category: string
-}
 
 function ProductBox({ item }: { item: PlantsProps }) {
 

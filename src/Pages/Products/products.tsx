@@ -6,6 +6,9 @@ import { getAllProducts, useGetAppProductsQuery } from '../../Redux/productsSlic
 function Products() {
 
     useScrollToTop();
+    // const { data } = useGetAppProductsQuery('/getAllProduct');
+    // const dispatch = useDispatch();
+    // dispatch(getAllProducts(data));
 
     return (
         <div style={{ marginTop: "100px" }}>

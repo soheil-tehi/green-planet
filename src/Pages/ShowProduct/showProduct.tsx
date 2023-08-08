@@ -1,26 +1,26 @@
 import { LuReplace } from 'react-icons/lu';
 import { MdOutlineLocalShipping } from 'react-icons/md';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useScrollToTop from '../../Components/useScrollToTop';
 import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProductById } from '../../Redux/productsSlice';
-import { RootState } from '../../Redux/store';
+import { useDispatch } from 'react-redux';
+import { PlantsProps } from '../../Redux/productsSlice';
 import { addToCart } from '../../Redux/cartSlice';
 import { separate } from '../Cart/cart';
+import axios from 'axios';
 import './showProduct.scss';
 
 function ShowProduct() {
 
     useScrollToTop();
-
+    const dispatch = useDispatch();
+    const [productById, setProductById] = useState<PlantsProps>();
     const { id } = useParams();
-    const dispatch = useDispatch()
-    const { productById } = useSelector((state: RootState) => state.products)
 
     useEffect(() => {
-        dispatch(getProductById(id))
-    }, [])
+        axios.get(`http://localhost:5500/product/getProduct/${id}`)
+            .then(res => setProductById(res.data))
+    }, []);
 
     return (
         <div className="showProduct-container">
@@ -32,7 +32,6 @@ function ShowProduct() {
                             <img src={`http://localhost:5500/${productById.imageCover}`} alt={productById.productName} />
                         </div>
                         <div className="info-middle">
-                            {/* <h2>گندمی</h2> */}
                             <h2>{productById.productName}</h2>
                             <h4>ارتفاع گیاه : {productById.heightPlant} سانتی متر</h4>
                             <h4>ارتفاع گلدان : {productById.heightPot} سانتی متر</h4>

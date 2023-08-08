@@ -1,10 +1,11 @@
 import { MdOutlineSupportAgent } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
-
 import './guidance.scss';
+
 
 function Guidance() {
     const navigate = useNavigate();
+
     return (
         <section className="guidance-container">
             <h2>مشاوره</h2>

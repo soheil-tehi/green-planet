@@ -4,20 +4,12 @@ import ImgSucculent from '../../assets/Images/succulent.jpg';
 import ImgCactus from '../../assets/Images/Cactus.jpeg';
 import { TbPlant2 } from 'react-icons/tb';
 import { PiPottedPlantBold, PiCactusBold } from 'react-icons/pi';
-import { useDispatch } from 'react-redux';
-import { getAllProducts, useGetAppProductsQuery } from '../../Redux/productsSlice';
 import './productsMain.scss';
 
 function ProductsMain() {
 
-    const dispatch = useDispatch();
-
-    const { data, isLoading, error } = useGetAppProductsQuery('/getAllProduct');
-
-    dispatch(getAllProducts(data));
-
     const navigate = useNavigate();
-    
+
     return (
         <section className='productsMain-container'>
             <h2>محصولات</h2>
