@@ -81,7 +81,7 @@ function Cart() {
                                             <td>
                                                 <div className='product-count'>
                                                     <AiOutlinePlus style={{ color: "green" }} onClick={() => dispatch(addCount(item._id))} />
-                                                    <p>{item.count}</p>
+                                                    <span>{item.count}</span>
                                                     {
                                                         item.count == 1 ?
                                                             <MdDeleteForever style={{ color: "red" }} onClick={() => dispatch(removeFromCart(item._id))} />
@@ -90,10 +90,10 @@ function Cart() {
                                                     }
                                                 </div>
                                             </td>
-                                            <td>{separate(item.price * item.count)}</td>
-                                            <td>
+                                            <td >{separate(item.price * item.count)}</td>
+                                            {/* <td>
                                                 <MdDeleteForever className='delete-icon' onClick={() => dispatch(removeFromCart(item._id))} />
-                                            </td>
+                                            </td> */}
                                         </tr>
                                     </Fragment>
                                 ))

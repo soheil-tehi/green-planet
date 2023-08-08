@@ -6,10 +6,21 @@ import { RiArticleFill, RiContactsBook2Fill } from 'react-icons/ri';
 import { BsInfoSquareFill } from 'react-icons/bs';
 import { AiTwotoneHome, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { BiCartAlt, BiUser } from 'react-icons/bi';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../Redux/store';
 import './navbar.scss';
 
 function Navbar() {
+
     const [isClose, setIsClose] = useState<boolean>(false);
+    const { cartItems } = useSelector((state: RootState) => state.cart);
+
+    const calculateCartItems = () => {
+        const cartCount = cartItems.reduce((prev, next) => {
+            return prev + next.count;
+        }, 0)
+        return cartCount
+    }
 
     return (
         <nav className="nav-container" >
@@ -61,9 +72,13 @@ function Navbar() {
                     <BiUser />
                 </NavLink>
                 <div className='divider'></div>
-                <NavLink className={({ isActive }) => isActive ? "cartActive" : ""}
+                <NavLink className={({ isActive }) => isActive ? "cartActive cart-icon" : "cart-icon"}
                     to="/cart">
                     <BiCartAlt />
+                    {
+                        calculateCartItems() !== 0 &&
+                        <div className='cart-count'><span>{calculateCartItems()}</span></div>
+                    }
                 </NavLink>
             </div>
         </nav>
