@@ -64,13 +64,26 @@
     .nav-cart {
         @include my-flex;
         gap: 20px;
-        // padding: 10px;
+        text-decoration: none;
+
 
         .divider::after {
             content: "|";
         }
 
+        .login-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #9d9c9c;
+            border-radius: 8px;
+            padding: 5px;
 
+            span {
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
 
         .userActive,
         .cartActive {
@@ -81,8 +94,11 @@
             color: black;
             display: flex;
 
-            svg {
+            .cart-logo {
                 margin: 10px;
+            }
+
+            svg {
                 cursor: pointer;
                 font-size: 30px;
                 transition: all 0.2s;
@@ -125,7 +141,7 @@
     }
 }
 
-@media screen and (max-width:740px) {
+@media screen and (max-width:880px) {
     .nav-mini {
         display: block !important;
         margin-left: auto;

@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { IoIosPricetags } from 'react-icons/io';
@@ -91,9 +91,6 @@ function Cart() {
                                                 </div>
                                             </td>
                                             <td >{separate(item.price * item.count)}</td>
-                                            {/* <td>
-                                                <MdDeleteForever className='delete-icon' onClick={() => dispatch(removeFromCart(item._id))} />
-                                            </td> */}
                                         </tr>
                                     </Fragment>
                                 ))

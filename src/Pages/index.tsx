@@ -12,6 +12,7 @@ import Succulent from './Products/Succulent/succulent';
 import ShowProduct from './ShowProduct/showProduct';
 import Blogs from './Blogs/blogs';
 import ShowBlog from './ShowBlog/showBlog';
+import Dashboard from './Dashboard/dashboard';
 
 export {
     MainPage,
@@ -28,4 +29,5 @@ export {
     ShowProduct,
     Blogs,
     ShowBlog,
+    Dashboard,
 }

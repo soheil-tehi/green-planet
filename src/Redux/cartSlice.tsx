@@ -17,7 +17,7 @@ interface InitialStateProps {
 }
 
 const initialState: InitialStateProps = {
-    cartItems: []
+    cartItems: JSON.parse(localStorage.getItem("cartItems") || "[]")
 }
 
 const cartSlice = createSlice({
@@ -34,13 +34,20 @@ const cartSlice = createSlice({
                     return item;
                 })
                 state.cartItems = updateCartItems;
+                localStorage.setItem("cartItems", JSON.stringify(updateCartItems));
             } else {
-                state.cartItems.push({ count: 1, ...action.payload })
+                state.cartItems.push({ count: 1, ...action.payload });
+                const cartItemsLocal = JSON.parse(localStorage.getItem("cartItems") || "[]");
+                cartItemsLocal.push({ count: 1, ...action.payload });
+                console.log(2222, cartItemsLocal);
+                localStorage.setItem("cartItems", JSON.stringify(cartItemsLocal));
             }
         },
         removeFromCart: (state, action) => {
             const cartItemsData = state.cartItems.filter(item => item._id !== action.payload);
             state.cartItems = cartItemsData;
+            localStorage.setItem("cartItems", JSON.stringify(cartItemsData));
+
         },
         addCount: (state, action) => {
             const updateCartItems = state.cartItems.filter(item => {
@@ -50,6 +57,8 @@ const cartSlice = createSlice({
                 return item;
             })
             state.cartItems = updateCartItems;
+            localStorage.setItem("cartItems", JSON.stringify(updateCartItems));
+
         },
         minusCount: (state, action) => {
             const updateCartItems = state.cartItems.filter(item => {
@@ -59,6 +68,8 @@ const cartSlice = createSlice({
                 return item;
             })
             state.cartItems = updateCartItems;
+            localStorage.setItem("cartItems", JSON.stringify(updateCartItems));
+
         }
     }
 });

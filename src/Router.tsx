@@ -1,7 +1,7 @@
 import {
     MainPage, ContactUs, AboutUs, Login, Cart,
     Register, Products, NotFound, Succulent,
-    HousePlants, Cactus, ShowProduct, Blogs, ShowBlog
+    HousePlants, Cactus, ShowProduct, Blogs, ShowBlog, Dashboard
 } from './Pages/index';
 
 const routers = [
@@ -18,6 +18,7 @@ const routers = [
     { path: "/products/:id", element: <ShowProduct /> },
     { path: "/blogs", element: <Blogs /> },
     { path: "/blogs/:id", element: <ShowBlog /> },
+    { path: "/dashboard", element: <Dashboard /> },
     { path: "*", element: <NotFound /> },
 ]
 

@@ -1,14 +1,16 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { Reducer, configureStore } from "@reduxjs/toolkit";
 import productsSlice, { productsApi, housePlantsApi, succulentPlantsApi, cactusPlantsApi } from "./productsSlice";
 import { setupListeners } from '@reduxjs/toolkit/query';
 import cartSlice from "./cartSlice";
 import blogSlice, { blogsApi } from "./blogSlice";
+import userSlice from "./userSlice";
 
 const store = configureStore({
     reducer: {
         cart: cartSlice,
         products: productsSlice,
         blogs: blogSlice,
+        user: userSlice as unknown as Reducer,
         [productsApi.reducerPath]: productsApi.reducer,
         [housePlantsApi.reducerPath]: housePlantsApi.reducer,
         [succulentPlantsApi.reducerPath]: succulentPlantsApi.reducer,
