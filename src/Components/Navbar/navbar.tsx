@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import LogoImg from '../../assets/Images/logo.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { PiPottedPlantFill } from 'react-icons/pi';
 import { RiArticleFill, RiContactsBook2Fill } from 'react-icons/ri';
 import { BsInfoSquareFill } from 'react-icons/bs';
+import { ImExit } from 'react-icons/im';
 import { AiTwotoneHome, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { BiCartAlt, BiLogIn, BiUser } from 'react-icons/bi';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../Redux/store';
-import jwt_decode from 'jwt-decode';
+import { IoMdArrowDropdown } from 'react-icons/io';
 import './navbar.scss';
 
 function Navbar() {
@@ -16,55 +17,32 @@ function Navbar() {
     const [isClose, setIsClose] = useState<boolean>(false);
     const [cartItems, setCartItems] = useState<number>(0);
     const [isLoign, setIsLogin] = useState<boolean>(false);
+    const [signOut, setSignOut] = useState<boolean>(false);
     const cartItemsLocal = useSelector((state: RootState) => state.cart);
-
-
-
-    // const userInfo = jwt_decode(localStorage.getItem("user") || "");
-    // const userInfo = ""
-    // console.log(555, userInfo);
-
     const data = localStorage.getItem("user") || "";
-
-
-    // console.log(jwt_decode(userInfo));
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (data) {
-            const userInfo = jwt_decode(data);
             setIsLogin(true)
-            console.log("eeff", userInfo);
-
         } else {
             setIsLogin(false);
-
-
         }
     }, [data]);
 
     useEffect(() => {
-        if (isLoign) {
-            const cartItemUser: any = jwt_decode(data);
-            console.log("is login", cartItemUser.cartItems);
-            if (cartItemUser.cartItems.length !== 0) {
-                const cartCount = cartItemUser.cartItems.reduce((prev: any, next: any) => {
-                    return prev + next.count;
-                }, 0);
-                setCartItems(cartCount);
-            } else {
-                setCartItems(0);
-            }
-        }
-        else {
-            const cartCount = cartItemsLocal.cartItems.reduce((prev: any, next: any) => {
-                return prev + next.count;
-            }, 0)
-            setCartItems(cartCount);
+        const cartCount = cartItemsLocal.cartItems.reduce((prev: any, next: any) => {
+            return prev + next.count;
+        }, 0)
+        setCartItems(cartCount);
+    }, [cartItemsLocal]);
 
-        }
-    }, [isLoign])
 
+    const handleExit = (e: any) => {
+        e.preventDefault();
+        localStorage.removeItem("user");
+        navigate("/");
+    }
 
     return (
         <nav className="nav-container" >
@@ -112,12 +90,16 @@ function Navbar() {
                 }
             </div>
             <div className='nav-cart' >
-                {/* <NavLink className={({ isActive }) => isActive ? "userActive" : ""} to="/login"> */}
                 {
                     isLoign ?
-                        <NavLink className={({ isActive }) => isActive ? "userActive" : ""} to="/dashboard">
+                        <div className='user-icon' onClick={() => setSignOut(!signOut)}>
                             <BiUser />
-                        </NavLink>
+                            <IoMdArrowDropdown />
+                            <div className='sign-out' data-flag={signOut} onClick={handleExit}>
+                                <span>خروج</span>
+                                <ImExit />
+                            </div>
+                        </div>
                         :
                         <NavLink className={({ isActive }) => isActive ? "userActive" : ""} to="/login">
                             <div className='login-icon'>

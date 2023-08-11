@@ -39,7 +39,6 @@ const cartSlice = createSlice({
                 state.cartItems.push({ count: 1, ...action.payload });
                 const cartItemsLocal = JSON.parse(localStorage.getItem("cartItems") || "[]");
                 cartItemsLocal.push({ count: 1, ...action.payload });
-                console.log(2222, cartItemsLocal);
                 localStorage.setItem("cartItems", JSON.stringify(cartItemsLocal));
             }
         },

@@ -11,6 +11,7 @@
     top: 0;
     z-index: 4;
 
+
     .nav-logo {
         border-radius: 10px;
         overflow: hidden;
@@ -66,9 +67,45 @@
         gap: 20px;
         text-decoration: none;
 
-
         .divider::after {
             content: "|";
+        }
+
+        .user-icon {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+
+            svg {
+                font-size: 30px;
+            }
+
+            svg:last-child {
+                color: #777;
+                font-size: 20px;
+            }
+
+            .sign-out {
+                position: absolute;
+                top: 40px;
+                z-index: 30;
+                background-color: #fff;
+                width: 100px;
+                border-radius: 5px;
+                padding: 10px;
+                display: none;
+
+                svg {
+                    color: rgb(245, 122, 122);
+                }
+            }
+
+            .sign-out[data-flag="true"] {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
         }
 
         .login-icon {
