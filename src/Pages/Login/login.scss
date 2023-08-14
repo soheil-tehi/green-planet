@@ -4,7 +4,7 @@
     padding: 10px;
     width: 40%;
     margin: 150px auto;
-    margin-bottom: 150px;
+    margin-bottom: 0;
     text-align: right;
     border: 1px solid $primary-color;
     @include my-border;
@@ -36,13 +36,10 @@
             width: 100%;
             font-weight: 600;
             font-size: 17px;
+            margin-top: 10px;
         }
 
-        .btn-register {
-            margin: 10px 0;
-        }
-
-        .login-form label {
+           .login-form label {
             margin: 10px 0;
         }
 
@@ -54,7 +51,6 @@
         }
 
         .login-password {
-            margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
             display: flex;
@@ -79,7 +75,32 @@
                 cursor: pointer;
             }
         }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
     }
+}
+
+.error-message-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    width: 40%;
+    margin: 10px auto;
+    padding: 5px;
+    background-color: rgb(249, 176, 176);
+    font-weight: 600;
+
+    svg {
+        font-size: 25px;
+        color: red;
+    }
+
 }
 
 @media screen and (max-width:1160px) {

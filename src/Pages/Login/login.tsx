@@ -1,85 +1,115 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { FiLogIn } from 'react-icons/fi';
-import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import jwtDecode from 'jwt-decode';
 import useScrollToTop from '../../Components/useScrollToTop';
 import axios from 'axios';
-import { userLogin } from '../../Redux/userSlice';
-import jwt from 'jsonwebtoken';
-import './login.scss';
 import { useDispatch } from 'react-redux';
+import { BiErrorCircle } from 'react-icons/bi';
+import { motion } from 'framer-motion';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as yup from 'yup';
+import './login.scss';
+interface InitialValuesProps {
+    email: string,
+    password: string,
+}
 
 function Login() {
 
     useScrollToTop();
-    const [showPass, setShowPass] = useState(false);
+    const [showPass, setShowPass] = useState<boolean>(false);
+    const [hasError, setHasError] = useState<boolean>(false);
     const navigate = useNavigate();
-    const dispatch = useDispatch();
 
+    const loginSchema = yup.object().shape({
+        email: yup.string().email("فرمت ایمیل وارد شده صحیح نمی باشد.").required("لطفا ایمیل را وارد نمایید."),
+        password: yup.string().min(4, "رمز عبور باید حداقل 4 کاراکتر باشد.").required("لطفا رمزعبور را وارد نمایید."),
+    })
 
+    const initialValues: InitialValuesProps = {
+        email: "",
+        password: "",
+    }
     const toggleShowPass = () => {
         setShowPass(!showPass);
     }
 
-    const responseMessage = (response: any) => {
-        console.log(jwtDecode(response.credential));
-    };
-
-    const [formData, setFormData] = useState({ email: "", password: "" });
-
-    const handleLogin = async (e: any) => {
-        e.preventDefault();
-        const response = await axios.post("http://localhost:5500/user/login", formData, {
+    const loginUser = async (values: InitialValuesProps, resetForm: any) => {
+        const response = await axios.post("http://localhost:5500/user/login", values, {
             headers: {
                 "Content-Type": "application/json"
             }
         })
-
         if (response.data.user) {
             localStorage.setItem("user", response.data.user);
-            // dispatch(userLogin(response.data.user));
+            resetForm();
             navigate("/");
         }
         else {
-            console.log("errror");
+            setHasError(true);
         }
-
-
-
     };
 
+    useEffect(() => {
+        let timerId: any;
+        if (hasError) {
+            timerId = setTimeout(() => setHasError(false), 5000);
+        }
+        return () => {
+            clearTimeout(timerId);
+        };
+    }, [hasError])
+
     return (
-        <div className='login-wrapper'>
-            <div className='login-title'>
-                <FiLogIn />
-                <h3 style={{ textAlign: "center" }}>ورود به حساب کاربری</h3>
+        <>
+            <div className='login-wrapper'>
+                <div className='login-title'>
+                    <FiLogIn />
+                    <h3 style={{ textAlign: "center" }}>ورود به حساب کاربری</h3>
+                </div>
+                <Formik
+                    initialValues={initialValues}
+                    onSubmit={(values, { resetForm }) => loginUser(values, resetForm)}
+                    validateOnBlur={false}
+                    validateOnChange={false}
+                    validationSchema={loginSchema}
+                >
+                    <Form className='login-form' >
+                        <label htmlFor="email" >ایمیل </label>
+                        <Field className='login-name-input' type="text" name="email" id="email" />
+                        <ErrorMessage name='email'>{msg => <p className='error-message'>{msg}</p>}</ErrorMessage>
+                        <label htmlFor="password" >گذرواژه </label>
+                        <div className='login-password'>
+                            <Field type={showPass ? "text" : "password"} id='password' name="password" />
+                            <a onClick={toggleShowPass}>
+                                {
+                                    showPass ?
+                                        <AiFillEyeInvisible />
+                                        :
+                                        <AiFillEye />
+                                }
+                            </a>
+                        </div>
+                        <ErrorMessage name='password'>{msg => <p className='error-message'>{msg}</p>}</ErrorMessage>
+                        <button type='submit' className='btn-login'>ورود</button>
+                        <button className='btn-register' onClick={() => navigate("/register")}>ثبت نام</button>
+                    </Form>
+                </Formik>
             </div>
-            <form className='login-form' action="">
-                <label htmlFor="Name" >نام کاربری / ایمیل</label>
-                <input className='login-name-input' type="text" id='Name' value={formData.email} onChange={(e) => { setFormData({ ...formData, email: e.target.value }) }} />
-                <label htmlFor="Password">گذرواژه</label>
-                <div className='login-password'>
-                    <input type={showPass ? "text" : "password"} id='Password' value={formData.password} onChange={(e) => { setFormData({ ...formData, password: e.target.value }) }} />
-                    <a onClick={toggleShowPass}>
-                        {
-                            showPass ?
-                                <AiFillEyeInvisible />
-                                :
-                                <AiFillEye />
-                        }
-                    </a>
-                </div>
-                <button onClick={handleLogin} className='btn-login'>ورود</button>
-                <button className='btn-register' onClick={() => navigate("/register")}>ثبت نام</button>
-                <div className='google-register'>
-                    <GoogleOAuthProvider clientId="789241900390-a5e9djesllvktl407v4pha9t8hn8442s.apps.googleusercontent.com">
-                        <GoogleLogin onSuccess={responseMessage} />
-                    </GoogleOAuthProvider>
-                </div>
-            </form>
-        </div>
+            {
+                hasError &&
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className='error-message-wrapper'>
+                    <BiErrorCircle />
+                    <p>اطلاعات کاربری نادرست است.</p>
+                </motion.div >
+            }
+        </>
     )
 }
 

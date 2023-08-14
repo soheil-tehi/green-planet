@@ -1,84 +1,107 @@
 @import '../../Sass/-variables.scss';
 
-.register-wrapper {
-    padding: 10px;
-    width: 40%;
+.register-container {
     margin: 150px auto;
-    margin-bottom: 150px;
-    text-align: right;
-    border: 1px solid $primary-color;
-    @include my-border;
 
-    .register-title {
+    .messager-success-register {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
+        gap: 10px;
+        border: 1px solid green;
+        border-radius: 5px;
+        width: 40%;
+        margin: 10px auto;
+        padding: 5px;
+        background-color: rgb(93, 252, 141);
+        font-weight: 600;
 
         svg {
-            font-size: 32px;
+            font-size: 25px;
             color: green;
         }
     }
 
-    .register-form {
-        display: flex;
-        flex-direction: column;
+    .register-wrapper {
+        margin: 5px auto;
+        padding: 10px;
+        width: 40%;
+        margin-bottom: 150px;
+        text-align: right;
+        border: 1px solid $primary-color;
+        @include my-border;
 
-        label {
-            margin: 5px 0;
-        }
-
-        .register-name-input {
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            padding: 5px;
-            outline: none;
-        }
-
-        .register-password {
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .register-title {
             display: flex;
+            justify-content: center;
             align-items: center;
-            justify-content: space-between;
-            overflow: hidden;
-
-            a {
-                display: flex;
-            }
-
-            input {
-                padding: 5px;
-                outline: none;
-                border: none;
-                width: 95%;
-            }
+            flex-direction: column;
 
             svg {
-                margin-left: 5px;
-                font-size: 20px;
-                cursor: pointer;
+                font-size: 32px;
+                color: green;
             }
         }
 
-        .btn-register,
-        .btn-login {
-            @include my-button;
-            border-radius: 5px;
-            width: 100%;
-            font-weight: 600;
-            font-size: 17px;
-        }
+        .register-form {
+            display: flex;
+            flex-direction: column;
 
-        .btn-login {
-            margin: 10px 0;
-        }
+            label {
+                margin: 5px 0;
+            }
 
-        .google-register {
-            width: 40%;
-            margin: 10px auto;
+            .error-message {
+                color: red;
+                font-size: 12px;
+            }
+
+            .register-name-input {
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                padding: 5px;
+                outline: none;
+            }
+
+            .register-password {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                overflow: hidden;
+
+                a {
+                    display: flex;
+                }
+
+                input {
+                    padding: 5px;
+                    outline: none;
+                    border: none;
+                    width: 95%;
+                }
+
+                svg {
+                    margin-left: 5px;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+
+            .btn-register,
+            .btn-login {
+                @include my-button;
+                border-radius: 5px;
+                width: 100%;
+                font-weight: 600;
+                font-size: 17px;
+                margin-top: 10px;
+            }
+
+            .btn-login {
+                margin: 10px 0;
+            }
         }
     }
 }
