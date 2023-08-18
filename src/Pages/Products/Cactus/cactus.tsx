@@ -1,11 +1,12 @@
 import useScrollToTop from '../../../Components/useScrollToTop';
-import ProductBox, { PlantsProps } from '../../../Components/ProductBox/productBox';
-import { useGetAppCactusPlantsQuery } from '../../../Redux/productsSlice';
+import ProductBox from '../../../Components/ProductBox/productBox';
+import { PlantsProps, useGetAppCactusPlantsQuery } from '../../../Redux/productsSlice';
+import LoadingBox from '../../../Components/LoadingBox/loadingBox';
 
 function Cactus() {
 
   useScrollToTop();
-  const { data } = useGetAppCactusPlantsQuery('/getCactusPlants');
+  const { data, isLoading } = useGetAppCactusPlantsQuery('/getCactusPlants');
   return (
     <>
       <div className='housePlants-container'>
@@ -25,12 +26,14 @@ function Cactus() {
           چراکه با داشتن چند نمونه کاکتوس متفاوت و یادگیری قلمه زدن کاکتوس ، پیوند کاکتوس ، تکثیر کاکتوس با بذر و نگهداری کاکتوس در منزل می‌توانید یک مجموعه زیبا و چشم نواز از این گونه زیبا تهیه کنید.</p>
         <div className='housePlants-wrapper'>
           {
-            !!data &&
-            data.map((item: PlantsProps) => (
-              <ProductBox
-                item={item}
-                key={item._id} />
-            ))
+            isLoading ?
+              <LoadingBox />
+              :
+              data.map((item: PlantsProps) => (
+                <ProductBox
+                  item={item}
+                  key={item._id} />
+              ))
           }
         </div>
       </div>

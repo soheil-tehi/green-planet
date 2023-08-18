@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './Redux/store.tsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import 'react-loading-skeleton/dist/skeleton.css';
 import './index.scss';
 
 
