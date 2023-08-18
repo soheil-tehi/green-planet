@@ -1,0 +1,41 @@
+@import '../../Sass/-variables.scss';
+
+.sk-productBox-container {
+    border: 1px solid $primary-color;
+    width: 20%;
+    height: 250px;
+    @include my-border;
+    cursor: pointer;
+
+    .sk-product-img-wrapper {
+        img {
+            width: 100%;
+        }
+    }
+
+    .sk-productBox-info {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
+
+@media screen and (max-width:700px) {
+    .sk-productBox-container {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:700px) {
+    .sk-productBox-container {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .sk-productBox-container {
+        width: 20%;
+    }
+}

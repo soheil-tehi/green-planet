@@ -3,21 +3,24 @@ import BlogBox from '../../Components/BlogBox/blogBox';
 import useScrollToTop from '../../Components/useScrollToTop';
 import { BlogProps, getAllblogs, useGetAppBlogsQuery } from '../../Redux/blogSlice';
 import './blogs.scss';
+import BlogLoading from '../../Components/BlogLoading/blogLoading';
 
 function Blogs() {
 
     useScrollToTop();
-    const { data } = useGetAppBlogsQuery("/getblogs");
+    const { data, isLoading } = useGetAppBlogsQuery("/getblogs");
     const dispatch = useDispatch();
     dispatch(getAllblogs(data));
 
     return (
         <div className="blogs-container">
             {
-                data &&
-                data.map((item: BlogProps) => (
-                    <BlogBox item={item} key={item._id} />
-                ))
+                isLoading ?
+                    <BlogLoading />
+                    :
+                    data.map((item: BlogProps) => (
+                        <BlogBox item={item} key={item._id} />
+                    ))
             }
         </div>
     )

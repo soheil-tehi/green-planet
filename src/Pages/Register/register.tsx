@@ -34,7 +34,6 @@ function Register() {
     useScrollToTop();
     const navigate = useNavigate();
     const [showFirstPass, setShowFirstPass] = useState<boolean>(false);
-    const [showSecondPass, setShowSecondPass] = useState<boolean>(false);
     const [showModal, setShowModal] = useState<boolean>(false);
     const [registerError, setRegisterError] = useState<boolean>(false);
     const navigation = useNavigate();
