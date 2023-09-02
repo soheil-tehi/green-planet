@@ -3,7 +3,7 @@ import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { GiArchiveRegister } from 'react-icons/gi';
 import jwtDecode from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
-import useScrollToTop from '../../Components/useScrollToTop';
+import useScrollToTop from '../../Components/Common/useScrollToTop';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';

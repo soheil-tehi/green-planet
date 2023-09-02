@@ -6,7 +6,7 @@ import { PiPottedPlantFill } from 'react-icons/pi';
 import { BsBoxSeam } from 'react-icons/bs';
 import LogoImg from '../../assets/Images/logo.png';
 import { useNavigate } from 'react-router-dom';
-import useScrollToTop from '../../Components/useScrollToTop';
+import useScrollToTop from '../../Components/Common/useScrollToTop';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Redux/store';
 import { addCount, minusCount, removeFromCart } from '../../Redux/cartSlice';

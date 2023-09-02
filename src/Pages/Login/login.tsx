@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { FiLogIn } from 'react-icons/fi';
 import jwtDecode from 'jwt-decode';
-import useScrollToTop from '../../Components/useScrollToTop';
+import useScrollToTop from '../../Components/Common/useScrollToTop';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { BiErrorCircle } from 'react-icons/bi';

@@ -1,6 +1,6 @@
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import './loadingBox.scss';
+import '../ProductBox/productBox.scss';
 
 
 function LoadingBox() {
@@ -8,11 +8,11 @@ function LoadingBox() {
     return (
         Array(20).fill({}).map(() => {
             return (
-                <div className='sk-productBox-container'>
-                    <div className='sk-product-img-wrapper'>
+                <div className='productBox-container' style={{ height: "250px" }}>
+                    <div className='product-img-wrapper'>
                         <Skeleton />
                     </div>
-                    <div className='sk-productBox-info'>
+                    <div className='productBox-info'>
                         <Skeleton />
                         <Skeleton />
                     </div>

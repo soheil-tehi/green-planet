@@ -6,7 +6,7 @@ import ProductsMain from '../../Components/mainPage/productsMain'
 import Purposes from '../../Components/mainPage/purposes'
 import Say from '../../Components/mainPage/say'
 import Service from '../../Components/mainPage/service'
-import useScrollToTop from '../../Components/useScrollToTop'
+import useScrollToTop from '../../Components/Common/useScrollToTop'
 
 function MianPage() {
     useScrollToTop();
@@ -24,7 +24,7 @@ function MianPage() {
 
     return (
         <>
-            <Header />  
+            <Header />
             <Purposes />
             <Service />
             <Guidance />

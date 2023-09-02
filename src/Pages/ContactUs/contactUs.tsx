@@ -3,7 +3,7 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { LuSend } from 'react-icons/lu';
 import { TfiLocationPin } from 'react-icons/tfi';
 import './contactUs.scss';
-import useScrollToTop from '../../Components/useScrollToTop';
+import useScrollToTop from '../../Components/Common/useScrollToTop';
 
 function ContactUs() {
 

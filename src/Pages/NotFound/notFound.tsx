@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { PiPottedPlantFill } from 'react-icons/pi';
 import NotFoundImg from '../../assets/Images/img-404.jpg';
 import './notFound.scss';
-import useScrollToTop from '../../Components/useScrollToTop';
+import useScrollToTop from '../../Components/Common/useScrollToTop';
 
 function NotFound() {
     const navigate = useNavigate();

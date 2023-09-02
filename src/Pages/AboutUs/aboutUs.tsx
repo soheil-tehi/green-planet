@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
-import useScrollToTop from '../../Components/useScrollToTop';
+import useScrollToTop from '../../Components/Common/useScrollToTop';
 import './aboutUs.scss';
 
 interface ImageDataProps {

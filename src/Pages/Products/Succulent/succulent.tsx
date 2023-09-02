@@ -1,4 +1,4 @@
-import useScrollToTop from '../../../Components/useScrollToTop';
+import useScrollToTop from '../../../Components/Common/useScrollToTop';
 import ProductBox from '../../../Components/ProductBox/productBox';
 import { PlantsProps, useGetAppSucculentPlantsQuery } from '../../../Redux/productsSlice';
 import LoadingBox from '../../../Components/LoadingBox/loadingBox';

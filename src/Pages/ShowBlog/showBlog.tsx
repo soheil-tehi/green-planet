@@ -1,4 +1,4 @@
-import useScrollToTop from '../../Components/useScrollToTop';
+import useScrollToTop from '../../Components/Common/useScrollToTop';
 import { BiTimeFive } from 'react-icons/bi';
 import { useNavigate, useParams } from 'react-router-dom';
 import { PiCactusBold, PiPottedPlantBold } from 'react-icons/pi';

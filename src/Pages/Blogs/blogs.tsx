@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import BlogBox from '../../Components/BlogBox/blogBox';
-import useScrollToTop from '../../Components/useScrollToTop';
+import useScrollToTop from '../../Components/Common/useScrollToTop';
 import { BlogProps, getAllblogs, useGetAppBlogsQuery } from '../../Redux/blogSlice';
 import './blogs.scss';
 import BlogLoading from '../../Components/BlogLoading/blogLoading';

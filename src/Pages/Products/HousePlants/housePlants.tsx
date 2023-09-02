@@ -1,5 +1,5 @@
 import ProductBox from '../../../Components/ProductBox/productBox'
-import useScrollToTop from '../../../Components/useScrollToTop';
+import useScrollToTop from '../../../Components/Common/useScrollToTop';
 import { PlantsProps, useGetAppHousePlantsQuery, } from '../../../Redux/productsSlice';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
