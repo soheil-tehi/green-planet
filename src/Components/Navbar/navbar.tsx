@@ -1,3 +1,5 @@
+import axios from 'axios';
+import Spinner from '../Spinner/spinner';
 import { useEffect, useRef, useState } from 'react';
 import LogoImg from '../../assets/Images/logo.png';
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -10,9 +12,7 @@ import { BiCartAlt, BiErrorCircle, BiLogIn, BiSearchAlt, BiUser } from 'react-ic
 import { useSelector } from 'react-redux';
 import { RootState } from '../../Redux/store';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import axios from 'axios';
 import { PlantsProps } from '../../Redux/productsSlice';
-import Spinner from '../Spinner/spinner';
 import './navbar.scss';
 
 function Navbar() {
@@ -35,10 +35,14 @@ function Navbar() {
     useEffect(() => {
         function handler(e: any) {
             if (serachIcon.current?.contains(e.target)) {
+                setShowSearchError(false);
                 return
             }
             if (!searchModal?.current?.contains(e.target)) {
-                setShowSearch(false)
+                setShowSearch(false);
+                setIsClose(false);
+                setShowResult([]);
+                setShowSearchError(false);
                 return
             }
         }
@@ -65,18 +69,22 @@ function Navbar() {
         setCartItems(cartCount);
     }, [cartItemsLocal]);
 
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            handleSearch()
+        }
+    }
+
     const handleSearch = async () => {
-        setIsLoading(true);
         setShowResult([]);
         const textSearch = searchInput?.current?.value;
-
         setShowSearchError(!!textSearch && textSearch?.length < 3);
         if (textSearch!! && textSearch?.length >= 3) {
+            setIsLoading(true);
             const result = await axios.get(`http://localhost:5500/product/searchProduct/${textSearch}`);
             setShowSearchError(result.data.length === 0);
             setShowResult(result.data);
             setIsLoading(false);
-
         }
     }
 
@@ -175,7 +183,7 @@ function Navbar() {
                 showSearch &&
                 <div className='search-area' ref={searchModal}>
                     <div className='search-input'>
-                        <input type="text" ref={searchInput} placeholder='لطفا برای جستجو 3 کاراکتر وارد نمایید' />
+                        <input type="text" ref={searchInput} placeholder='لطفا برای جستجو 3 کاراکتر وارد نمایید' onKeyDown={handleKeyDown} />
                         {
                             isLoading ?
                                 <Spinner />

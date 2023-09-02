@@ -1,18 +1,17 @@
 @import '../../Sass/-variables.scss';
 
 .service-container {
-    // background-color: $second-color;
     display: flex;
     flex-direction: column;
     width: 90%;
     margin: 20px auto;
-    // padding: 50px 20px;
     overflow: hidden;
 
     h2 {
         text-align: center;
         margin-bottom: 30px;
         font-size: 32px;
+        color: $text-color;
     }
 
     p {
@@ -25,7 +24,6 @@
     padding:  20px;
     gap: 20px;
 
-
     .service-box {
         flex: 1;
         padding: 20px;
@@ -34,19 +32,15 @@
         flex-direction: column;
         gap: 30px;
 
-
         h4 {
             font-size: 18px;
         }
-
 
         svg {
             color: $primary-color;
             font-size: 40px;
         }
-
     }
-
 }
 
 @media screen and (max-width:600px) {

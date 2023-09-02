@@ -13,16 +13,17 @@
     justify-content: start;
     align-items: center;
 
-
     .header-info {
         margin-right: 50px;
 
         .header-title {
             font-size: 72px;
+            color: $text-color;
         }
 
         h3 {
             font-size: 36px;
+            color: $text-color;
         }
 
         .header-product-info {

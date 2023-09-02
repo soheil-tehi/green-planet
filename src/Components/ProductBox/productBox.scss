@@ -5,6 +5,13 @@
     width: 20%;
     @include my-border;
     cursor: pointer;
+    transition: all 0.4s;
+
+
+    &:hover{
+        box-shadow: 0px 10px 15px 12px rgba(0,0,0,0.1); 
+        transform: scale(1.03);
+    }
 
     .product-img-wrapper {
         // width: 100%;

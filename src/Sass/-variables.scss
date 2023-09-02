@@ -1,6 +1,7 @@
 $primary-color: #67d18d;
 $second-color: #026131;
-$btn-color: #ff6900;
+$bg-color: #fcf9f3;
+$text-color: #224229;
 
 // Mixins
 @mixin my-button() {
@@ -8,7 +9,8 @@ $btn-color: #ff6900;
     font-size: 1em;
     font-weight: 500;
     background-color: $primary-color;
-    color: white;
+    // color: white;
+    color: $text-color;
     border-radius: 50px;
     display: flex;
     justify-content: center;

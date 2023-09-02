@@ -7,8 +7,6 @@ interface ImagePathProps {
 
 function Customers() {
 
-
-
     const imagePath: ImagePathProps[] = [
         { id: 1, path: "src/assets/Images/Customers/c1.png" },
         { id: 2, path: "src/assets/Images/Customers/c2.png" },
@@ -17,20 +15,18 @@ function Customers() {
         { id: 5, path: "src/assets/Images/Customers/c5.png" },
         { id: 6, path: "src/assets/Images/Customers/c6.png" },
         { id: 7, path: "src/assets/Images/Customers/c7.png" },
-
     ]
 
     return (
         <section className='customers-container'>
             <h2>برخی از مشتری های
-                <h2 style={{ display: "inline", color: "#026131" }}>  سبزینه   </h2>
+                <h2 style={{ display: "inline" }}>  سبزینه   </h2>
             </h2>
             <div className='customers-logo-wrapper'>
                 {imagePath.map((item: ImagePathProps) => (
                     <div className='customers-logo' key={item.id}>
                         <img src={item.path} />
                     </div>
-
                 ))}
             </div>
         </section>

@@ -1,15 +1,15 @@
+import axios from 'axios';
+import ShowProductLoading from '../../Components/ShowProductLoading/showProductLoading';
+import useScrollToTop from '../../Components/Common/useScrollToTop';
 import { LuReplace } from 'react-icons/lu';
 import { MdOutlineLocalShipping } from 'react-icons/md';
 import { useEffect, useState } from 'react';
-import useScrollToTop from '../../Components/Common/useScrollToTop';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { PlantsProps } from '../../Redux/productsSlice';
 import { addToCart } from '../../Redux/cartSlice';
 import { separate } from '../Cart/cart';
-import axios from 'axios';
 import './showProduct.scss';
-import ShowProductLoading from '../../Components/ShowProductLoading/showProductLoading';
 
 function ShowProduct() {
 
