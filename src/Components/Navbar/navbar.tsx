@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Spinner from '../Spinner/spinner';
+import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import LogoImg from '../../assets/Images/logo.png';
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -81,7 +82,7 @@ function Navbar() {
         setShowSearchError(!!textSearch && textSearch?.length < 3);
         if (textSearch!! && textSearch?.length >= 3) {
             setIsLoading(true);
-            const result = await axios.get(`http://localhost:5500/product/searchProduct/${textSearch}`);
+            const result = await axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/product/searchProduct/${textSearch}`);
             setShowSearchError(result.data.length === 0);
             setShowResult(result.data);
             setIsLoading(false);
@@ -193,10 +194,14 @@ function Navbar() {
                     </div>
                     {
                         showSearchError &&
-                        <div className='search-not-found'>
+                        <motion.div
+                            initial={{ opacity: 0, y: 100 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className='search-not-found'>
                             <BiErrorCircle />
                             <p className='not-found-message'>با عرض پوزش اما هیچ چیز مطابق با شرایط جستجوی شما نبود لطفا دوباره با کلمات کلیدی مختلف امتحان کنید.</p>
-                        </div>
+                        </motion.div>
                     }
                     {
                         !!showResult.length &&
@@ -204,7 +209,7 @@ function Navbar() {
                             {
                                 showResult.map((item: PlantsProps) => (
                                     <div className='show-result-wrapper' onClick={() => handleShowResult(item._id)}>
-                                        <img src={`http://localhost:5500/${item.imageCover}`} alt={item.productName} />
+                                        <img src={`${import.meta.env.VITE_REACT_APP_API_URL}/${item.imageCover}`} alt={item.productName} />
                                         <p>{item.productName}</p>
                                     </div>
                                 ))

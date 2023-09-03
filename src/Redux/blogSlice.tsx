@@ -34,7 +34,7 @@ const initialState: InitialStateProps = {
 
 export const blogsApi = createApi({
     reducerPath: "blogsApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5500/blog/" }),
+    baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_URL}/blog/` }),
     endpoints: (builder) => ({
         getAppBlogs: builder.query({
             query: () => "getblogs"

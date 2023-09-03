@@ -7,7 +7,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import 'react-loading-skeleton/dist/skeleton.css';
 import './index.scss';
 
-
 const qruryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

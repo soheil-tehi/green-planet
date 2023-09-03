@@ -19,7 +19,7 @@ function ShowProduct() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:5500/product/getProduct/${id}`)
+        axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/product/getProduct/${id}`)
             .then(res => setProductById(res.data))
     }, []);
 
@@ -34,7 +34,7 @@ function ShowProduct() {
                     <>
                         <div className="showProduct-info">
                             <div className="info-right">
-                                <img src={`http://localhost:5500/${productById.imageCover}`} alt={productById.productName} />
+                                <img src={`${import.meta.env.VITE_REACT_APP_API_URL}/${productById.imageCover}`} alt={productById.productName} />
                             </div>
                             <div className="info-middle">
                                 <h2>{productById.productName}</h2>
@@ -69,7 +69,7 @@ function ShowProduct() {
                         </div>
                         <div className="showProduct-description">
                             <div className='desc-img-wrapper'>
-                                <img src={`http://localhost:5500/${productById.imageDescription}`} alt={productById.productName} />
+                                <img src={`${import.meta.env.VITE_REACT_APP_API_URL}/${productById.imageDescription}`} alt={productById.productName} />
                             </div>
                             <div className='desc-data-wrapper'>
                                 <h3>توضیحات</h3>

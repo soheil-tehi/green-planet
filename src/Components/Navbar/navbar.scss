@@ -249,11 +249,13 @@
         gap: 5px;
 
         .show-result-wrapper {
+            margin-top: 10px;
             border: 1px solid #9d9c9c;
             border-radius: 5px;
-            width: 350px;
+            width: 300px;
             display: flex;
             align-items: center;
+            gap: 10px;
             cursor: pointer;
             padding: 5px;
             transition: all 0.4s;

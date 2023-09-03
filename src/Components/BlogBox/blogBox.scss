@@ -6,6 +6,12 @@
     width: 32%;
     overflow: hidden;
     cursor: pointer;
+    transition: all 0.4s;
+
+    &:hover{
+        box-shadow: 0px 10px 15px 8px rgba(0,0,0,0.1);
+        transform: scale(1.01);
+    }
 
     .blog-img-wrapper {
         width: 100%;

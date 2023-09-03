@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
+import useScrollToTop from '../../Components/Common/useScrollToTop';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { GiArchiveRegister } from 'react-icons/gi';
-import jwtDecode from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
-import useScrollToTop from '../../Components/Common/useScrollToTop';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import axios from 'axios';
 import { BsFillChatHeartFill } from 'react-icons/bs';
 import './register.scss';
 interface InitialValuesProps {
@@ -52,19 +51,20 @@ function Register() {
         setShowFirstPass(!showFirstPass);
     }
 
-    const responseMessage = (response: any) => {
-        console.log(jwtDecode(response.credential));
-    };
-    const errorMessage = (error: any) => {
-        console.log(error);
-    };
+    // const responseMessage = (response: any) => {
+    //     console.log(jwtDecode(response.credential));
+    // };
+    // const errorMessage = (error: any) => {
+    //     console.log(error);
+    // };
 
     const registerUser = (values: InitialValuesProps, resetForm: any) => {
-        axios.post("http://localhost:5500/user/register", values, {
+        axios.post(`${import.meta.env.VITE_REACT_APP_API_URL}/user/register`, values, {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(res => {
+
             if (res.data) {
                 resetForm();
                 setShowModal(true);
@@ -73,6 +73,7 @@ function Register() {
                     navigation("/");
                 }, 2500);
             } else {
+                console.log(111, res.data);
                 setShowModal(true);
                 setRegisterError(true);
             }
@@ -83,7 +84,7 @@ function Register() {
         <div className='register-container'>
             {
                 showModal &&
-                <div className='messager-success-register'>
+                <div className='messager-success-register' data-flag={registerError}>
                     <BsFillChatHeartFill />
                     {registerError ?
                         <p>ایمیل وارد شده قبلا ثبت شده است.</p>

@@ -10,7 +10,7 @@ function ProductBox({ item }: { item: PlantsProps }) {
     return (
         <div className='productBox-container' onClick={() => navigate(`/products/${item._id}`)}>
             <div className='product-img-wrapper'>
-                <img src={`http://localhost:5500/${item.imageCover}`} alt="" />
+                <img src={`${import.meta.env.VITE_REACT_APP_API_URL}/${item.imageCover}`} alt="" />
             </div>
             <div className='productBox-info'>
                 <h3>{item.productName}</h3>

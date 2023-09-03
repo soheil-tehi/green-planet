@@ -73,7 +73,7 @@ function Cart() {
                                             <td >
                                                 <div className='product-wrapepr'>
                                                     <div className='product-img-wrapper'>
-                                                        <img src={`http://localhost:5500/${item.imageCover}`} alt="sss" />
+                                                        <img src={`${import.meta.env.VITE_REACT_APP_API_URL}/${item.imageCover}`} alt="sss" />
                                                     </div>
                                                     <p>{item.productName}</p>
                                                 </div>

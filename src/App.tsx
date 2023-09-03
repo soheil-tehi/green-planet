@@ -1,9 +1,8 @@
 import routers from './Router';
 import { useRoutes } from 'react-router-dom';
 import Navbar from './Components/Navbar/navbar';
-import './App.scss';
 import Footer from './Components/Footer/footer';
-import { useEffect } from 'react';
+import './App.scss';
 
 function App() {
 

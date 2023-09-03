@@ -18,7 +18,7 @@ function ShowBlog() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:5500/blog/getBlogById/${id}`)
+        axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/blog/getBlogById/${id}`)
             .then(res => setBlogById(res.data));
     }, [id]);
 
@@ -30,7 +30,7 @@ function ShowBlog() {
                     :
                     <>
                         <div className="blog-right">
-                            <img src={`http://localhost:5500/${blogById.imageCover}`} alt="" />
+                            <img src={`${import.meta.env.VITE_REACT_APP_API_URL}/${blogById.imageCover}`} alt="" />
                             <h2>{blogById.blogTitle}</h2>
                             <div className='right-info'>
                                 <p>نویسنده : {"سبزینه"}</p>

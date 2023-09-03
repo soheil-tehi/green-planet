@@ -40,7 +40,7 @@ const initialState: InitialStateProps = {
 
 export const productsApi = createApi({
     reducerPath: "productsApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5500/product/" }),
+    baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_URL}/product/` }),
     endpoints: (builder) => ({
         getAppProducts: builder.query({
             query: () => "getAllProduct"
@@ -50,7 +50,7 @@ export const productsApi = createApi({
 
 export const housePlantsApi = createApi({
     reducerPath: "housePlantsApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5500/product/" }),
+    baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_URL}/product/` }),
     endpoints: (builder) => ({
         getAppHousePlants: builder.query({
             query: () => "getHousePlants"
@@ -60,7 +60,7 @@ export const housePlantsApi = createApi({
 
 export const succulentPlantsApi = createApi({
     reducerPath: "succulentPlantsApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5500/product/" }),
+    baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_URL}/product/` }),
     endpoints: (builder) => ({
         getAppSucculentPlants: builder.query({
             query: () => "getSucculentPlants"
@@ -70,7 +70,7 @@ export const succulentPlantsApi = createApi({
 
 export const cactusPlantsApi = createApi({
     reducerPath: "cactusPlantsApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5500/product/" }),
+    baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_REACT_APP_API_URL}/product/` }),
     endpoints: (builder) => ({
         getAppCactusPlants: builder.query({
             query: () => "getCactusPlants"

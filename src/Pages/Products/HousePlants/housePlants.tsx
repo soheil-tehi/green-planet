@@ -12,8 +12,6 @@ function HousePlants() {
   useScrollToTop();
   const { data, isLoading } = useGetAppHousePlantsQuery('/getHousePlants');
 
-  console.log(isLoading);
-
   return (
     <>
       <div className='housePlants-container'>

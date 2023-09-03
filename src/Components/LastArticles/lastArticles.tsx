@@ -17,7 +17,7 @@ function LastArticles() {
                 blogList.map((item: BlogProps) => (
                     <div key={item._id} onClick={() => navigate(`/blogs/${item._id}`)}>
                         <div className='lastArticles-item'>
-                            <img src={`http://localhost:5500/${item.imageCover}`} alt="" />
+                            <img src={`${import.meta.env.VITE_REACT_APP_API_URL}/${item.imageCover}`} alt="" />
                             <p>{item.blogTitle}</p>
                         </div>
                     </div>

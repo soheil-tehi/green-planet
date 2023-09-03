@@ -11,7 +11,7 @@ function BlogBox({ item }: { item: BlogProps }) {
     return (
         <div className="blog-box-container" onClick={() => navigate(`/blogs/${item._id}`)}>
             <div className='blog-img-wrapper'>
-                <img src={`http://localhost:5500/${item.imageCover}`} alt="" />
+                <img src={`${import.meta.env.VITE_REACT_APP_API_URL}/${item.imageCover}`} alt="" />
             </div>
             <div className='blog-box-info'>
                 <div className='box-info-date-view'>

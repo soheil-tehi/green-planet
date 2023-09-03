@@ -16,6 +16,10 @@
         background-color: rgb(93, 252, 141);
         font-weight: 600;
 
+        &[data-flag="true"] {
+            background-color: red;
+        }
+
         svg {
             font-size: 25px;
             color: green;
