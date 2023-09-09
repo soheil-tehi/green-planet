@@ -19,7 +19,9 @@ function ShowBlog() {
 
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/blog/getBlogById/${id}`)
-            .then(res => setBlogById(res.data));
+            .then(res => {
+                setBlogById(res.data)
+            });
     }, [id]);
 
     return (
@@ -40,7 +42,7 @@ function ShowBlog() {
                                 <BiTimeFive />
                                 <p>زمان مطالعه : {blogById.readTime} دقیقه</p>
                             </div>
-                            <div className='description' dangerouslySetInnerHTML={{ __html: blogById.description }} />
+                            <div className='description' dangerouslySetInnerHTML={{ __html: blogById.descHtml }} />
                         </div>
                         <aside className="aside-blog-left">
                             <div className='aside-products'>

@@ -8,7 +8,7 @@ function blogLoading() {
         return (
             <div className="blog-box-container" style={{ height: "350px" }}>
                 <div className='blog-img-wrapper'>
-                    <Skeleton />
+                    <Skeleton style={{height:"150px"}}/>
                 </div>
                 <div className='blog-box-info'>
                     <div className='box-info-date-view'>
@@ -21,6 +21,8 @@ function blogLoading() {
                             <Skeleton />
                         </div>
                     </div>
+                    <Skeleton />
+                    <Skeleton />
                     <Skeleton />
                     <Skeleton />
                 </div>

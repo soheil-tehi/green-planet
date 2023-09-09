@@ -25,8 +25,6 @@ function ShowProduct() {
 
     return (
         <div className="showProduct-container">
-
-
             {
                 !productById ?
                     <ShowProductLoading />

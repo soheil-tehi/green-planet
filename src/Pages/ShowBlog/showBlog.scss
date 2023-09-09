@@ -13,6 +13,8 @@
 
         img {
             width: 100%;
+            height: 410px;
+            object-fit: cover;
         }
 
         .right-info {
@@ -31,6 +33,15 @@
             align-items: center;
             gap: 5px;
             margin-bottom: 10px;
+        }
+
+
+
+        .description {
+            a {
+                color: $second-color;
+                display: none;
+            }
         }
     }
 
