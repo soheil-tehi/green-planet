@@ -15,12 +15,15 @@ function ShowBlog() {
     useScrollToTop();
     const navigate = useNavigate();
     const [blogById, setBlogById] = useState<BlogProps | null>(null);
+    const [dateTime, setDateTime] = useState<string>("");
     const { id } = useParams();
 
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/blog/getBlogById/${id}`)
             .then(res => {
-                setBlogById(res.data)
+                setBlogById(res.data);
+                const dateObj = new Date(res.data.date);
+                setDateTime(dateObj.toLocaleDateString())
             });
     }, [id]);
 
@@ -36,7 +39,7 @@ function ShowBlog() {
                             <h2>{blogById.blogTitle}</h2>
                             <div className='right-info'>
                                 <p>نویسنده : {"سبزینه"}</p>
-                                <p>به روز رسانی شده در : {blogById.date}</p>
+                                <p>به روز رسانی شده در : {dateTime}</p>
                             </div>
                             <div className='read-time'>
                                 <BiTimeFive />

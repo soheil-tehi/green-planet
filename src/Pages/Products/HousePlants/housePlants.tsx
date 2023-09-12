@@ -1,12 +1,11 @@
 import ProductBox from '../../../Components/ProductBox/productBox'
 import useScrollToTop from '../../../Components/Common/useScrollToTop';
 import { PlantsProps, useGetAppHousePlantsQuery, } from '../../../Redux/productsSlice';
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-
-import './housePlants.scss';
 import '../../../Components/ProductBox/productBox.scss';
 import LoadingBox from '../../../Components/LoadingBox/loadingBox';
+import './housePlants.scss';
+
 function HousePlants() {
 
   useScrollToTop();

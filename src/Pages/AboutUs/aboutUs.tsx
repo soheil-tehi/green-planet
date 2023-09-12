@@ -12,15 +12,15 @@ interface ImageDataProps {
 
 
 const images = [
-    "src/assets/Images/Gallery/2.jpeg",
-    "src/assets/Images/Gallery/4.jpg",
-    "src/assets/Images/Gallery/3.png",
-    "src/assets/Images/Gallery/6.jpeg",
-    "src/assets/Images/Gallery/1.jpeg",
-    "src/assets/Images/Gallery/8.jpeg",
-    "src/assets/Images/Gallery/7.jpeg",
-    "src/assets/Images/Gallery/5.jpeg",
-    "src/assets/Images/Gallery/9.jpg",
+    "src/assets/Images/2.jpeg",
+    "src/assets/Images/4.jpg",
+    "src/assets/Images/3.png",
+    "src/assets/Images/6.jpeg",
+    "src/assets/Images/1.jpeg",
+    "src/assets/Images/8.jpeg",
+    "src/assets/Images/7.jpeg",
+    "src/assets/Images/5.jpeg",
+    "src/assets/Images/9.jpg",
 ];
 
 function AboutUs() {

@@ -7,6 +7,9 @@ import './blogBox.scss';
 function BlogBox({ item }: { item: BlogProps }) {
 
     const navigate = useNavigate();
+    // Format the date and time
+    const dateObj = new Date(item.date);
+    const formattedDate = dateObj.toLocaleDateString();
 
     return (
         <div className="blog-box-container" onClick={() => navigate(`/blogs/${item._id}`)}>
@@ -17,7 +20,7 @@ function BlogBox({ item }: { item: BlogProps }) {
                 <div className='box-info-date-view'>
                     <div className='info-date-wrapper'>
                         <BsCalendarWeek />
-                        <p>{item.date}</p>
+                        <p>{formattedDate}</p>
                     </div>
                     <div className='info-date-wrapper'>
                         <AiOutlineEye />

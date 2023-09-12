@@ -21,7 +21,7 @@ function Service() {
                 <motion.div
                     initial={{ y: 300, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
+                    transition={{ delay: 0.1, duration: 0.3 }}
                     viewport={{ once: true }}
                     className='service-box'>
                     <BiRun />
@@ -34,7 +34,7 @@ function Service() {
                 <motion.div
                     initial={{ y: 300, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.6, duration: 0.5 }}
+                    transition={{ delay: 0.2, duration: 0.3 }}
                     viewport={{ once: true }}
                     className='service-box'>
                     <FaTree />
@@ -48,7 +48,7 @@ function Service() {
                 <motion.div
                     initial={{ y: 300, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.9, duration: 0.5 }}
+                    transition={{ delay: 0.3, duration: 0.3 }}
                     viewport={{ once: true }}
                     className='service-box'>
                     <BsCashCoin />
@@ -61,7 +61,7 @@ function Service() {
                 <motion.div
                     initial={{ y: 300, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 1.3, duration: 0.5 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
                     viewport={{ once: true }}
                     className='service-box'>
                     <SiAdguard />
@@ -72,11 +72,7 @@ function Service() {
                         پلاک تشخیص دهید.
                     </p>
                 </motion.div>
-
-
             </div>
-
-
         </section>
     )
 }

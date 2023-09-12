@@ -8,13 +8,13 @@ interface ImagePathProps {
 function Customers() {
 
     const imagePath: ImagePathProps[] = [
-        { id: 1, path: "src/assets/Images/Customers/c1.png" },
-        { id: 2, path: "src/assets/Images/Customers/c2.png" },
-        { id: 3, path: "src/assets/Images/Customers/c3.png" },
-        { id: 4, path: "src/assets/Images/Customers/c4.png" },
-        { id: 5, path: "src/assets/Images/Customers/c5.png" },
-        { id: 6, path: "src/assets/Images/Customers/c6.png" },
-        { id: 7, path: "src/assets/Images/Customers/c7.png" },
+        { id: 1, path: "src/assets/Images/c1.png" },
+        { id: 2, path: "src/assets/Images/c2.png" },
+        { id: 3, path: "src/assets/Images/c3.png" },
+        { id: 4, path: "src/assets/Images/c4.png" },
+        { id: 5, path: "src/assets/Images/c5.png" },
+        { id: 6, path: "src/assets/Images/c6.png" },
+        { id: 7, path: "src/assets/Images/c7.png" },
     ]
 
     return (
