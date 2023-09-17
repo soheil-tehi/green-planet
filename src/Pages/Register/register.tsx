@@ -64,7 +64,6 @@ function Register() {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(res => {
-
             if (res.data) {
                 resetForm();
                 setShowModal(true);

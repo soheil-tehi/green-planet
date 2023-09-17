@@ -112,12 +112,12 @@
 
 @media screen and (max-width:1160px) {
     .register-wrapper {
-        width: 60%;
+        width: 60% !important;
     }
 }
 
 @media screen and (max-width:750px) {
     .register-wrapper {
-        width: 90%;
+        width: 90% !important;
     }
 }
